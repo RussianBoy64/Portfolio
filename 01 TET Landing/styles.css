@@ -97,16 +97,20 @@ a {
 }
 
 .social {
+  display: flex;  
+}
+
+.social a {
   display: inherit;
-  width: 60px;
-  height: 60px;
   align-items: center;
   justify-content: center;
+  width: 60px;
+  height: 60px;
   margin: 0 5px;
   border: 1px solid #E8E8E8;
 }
 
-.social:hover {
+.social a:hover {
   border-color: #d1d1d1;
 }
 
@@ -124,18 +128,19 @@ a {
   cursor: pointer;
 }
 
+.button:hover {
+  background-color: #4063A7;
+  color: #fff;
+}
+
+.button:active {
+  background-color: #5477BB;
+}
+
 .blue {
   background-color: #5477BB;
   color: #fff;
   border: none;
-}
-
-.blue:hover {
-  background-color: #4063A7;
-}
-
-.button:active {
-  background-color: #303B40;
 }
 
 .menu {
@@ -608,7 +613,7 @@ a {
 .growth {
   margin-top: 70px;
   border-top: 1px solid #E8E8E8;
-  border-bottom: 1px solid #E8E8E8;;
+  border-bottom: 1px solid #E8E8E8;
 }
 
 .growth__container {
@@ -627,4 +632,171 @@ a {
   font-weight: 600;
   font-size: 1.8rem;
   line-height: 2.8rem;
+}
+
+/*=============================== START ================================*/
+
+.start {
+  margin-top: 100px;
+}
+
+.start__container {
+  display: flex;
+  margin: 50px 0;
+}
+
+.start__step:not(:last-child) {
+  padding-right: 30px;
+}
+
+.step__title {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  background-color: #5477BB;
+}
+
+.step__subtitle {
+  margin-top: 23px;
+  color: #F69A1B;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.9rem;
+  text-transform: uppercase;
+}
+
+/*================================= FORM ================================*/
+
+.form {
+  margin: 65px 0;
+  background-color: #F69A1B;
+  padding: 46px 98px;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form__title {
+  width: 100%;
+  margin-bottom: 17px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.8rem;
+}
+.form__text {
+  width: 70%;
+}
+
+/*============================ POSTS ================================*/
+
+.posts {
+  padding-bottom: 100px;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.posts__container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.posts__card {
+  width: 33.33%;
+}
+
+.posts__card:not(:last-child) {
+  padding-right: 30px;
+}
+
+.posts__img {
+  position: relative;
+  height: 230px;
+}
+
+.posts__img img {
+  width: 100%;
+  height: 100%;
+}
+
+.datestamp {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  background-color: #5477BB;
+  padding: 6px 17px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 0.9rem;
+}
+
+.posts__text {
+  margin-top: 14px;
+}
+
+/*================================== TRUST ============================*/
+
+.trust {
+  margin-top: 93px;
+  padding-bottom: 100px;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.trust__container {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trust__card {
+  width: 166px;
+  height: 90px;
+  border: 1px solid #E8E8E8;
+  background-color: #fff;
+}
+
+/*================================ CONTACTS ===========================*/
+
+.contacts__content {
+  margin-top: 40px;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content__left {
+  width: 50%;
+}
+
+.content__left > div {
+  margin-bottom: 30px;
+}
+
+.phone {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.8rem;
+}
+
+.phone span:first-child,
+.adress span:first-child {
+  display: inline-block;
+  width: 20%;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.adress {
+  font-size: 1.1rem;
+  font-weight: 400;
+
 }
