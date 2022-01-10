@@ -557,14 +557,30 @@
                 <div class="subscribe">
                   <form class="subscribe__form" action="" method="post" autocomplete="off">
                     <label class="subscribe__label" for="sub">E-mail Подпишитесь на нашу рассылку и получайте новости и извещения о событиях и отраслевые отчеты на свою почту.</label>
-                    <input class="subscribe__input" type="email" id="sub" name="e-mail" placeholder="E-mail">
+                    <div class="subscribe__input">
+                      <input type="email" id="sub" name="e-mail" placeholder="E-mail" required>
+                      <button class="subscribe__button" type="submit"></button>
+                    </div>
                   </form>
                 </div>
+              </div>
+              <div class="content__right">
+                <form action="" class="message-form" autocomplete="off">
+                  <label for="message-form__name">Отправить сообщение</label>
+                  <input type="text" class="message-form__name" id="message-form__name" name="message-form__name" placeholder="Ваше имя" required>
+                  <input type="email" class="message-form__email" name="message-form__email" placeholder="E-mail" required>
+                  <textarea class="message-form__messsage" name="message-form__messsage" id="" placeholder="Сообщение" required></textarea>
+                  <p class="message-form__text">Нажимая “Отправить” вы автоматически соглашаетесь с политикой конфиденциальности</p>
+                  <input type="submit" value="Отправить" class="button blue">
+                </form>
               </div>
             </div>
           </article>
         </div>
       </main>
+      <footer>
+        <p>© 2021 Аудиторская Фирма «ТЕТ». Регистрационный номер 23463607. Все права защищены.</p>
+      </footer>
   </div>
 </body>
 </html>
