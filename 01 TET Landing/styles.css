@@ -14,6 +14,7 @@ html {
   font-weight: 500;
   color: #303B40;
 }
+
 main {
   overflow: hidden;
 }
@@ -106,7 +107,7 @@ a {
   justify-content: center;
   width: 60px;
   height: 60px;
-  margin: 0 5px;
+  margin-right: 10px;
   border: 1px solid #E8E8E8;
 }
 
@@ -181,7 +182,8 @@ a {
 }
 
 .main-screen__image {
-  margin-right: 30px;
+  padding-right: 30px;
+  height: fit-content;
 }
 
 .main-screen__text {
@@ -313,16 +315,13 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 30px;
 }
 
 .content-list__item {
   display: block;
-  max-width: 264px;
+  width: 25%;
   max-height: 385px;
-}
-
-.content-list__item:not(:last-child) {
-  margin-right: 30px;
 }
 
 .expert-img {
@@ -704,7 +703,6 @@ a {
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -785,23 +783,24 @@ a {
   margin-bottom: 30px;
 }
 
-.phone {
+.phone p {
+  display: inline-block;
   font-size: 1rem;
   font-weight: 800;
   line-height: 1.8rem;
 }
 
-.phone span:first-child,
-.adress span:first-child {
-  display: inline-block;
-  width: 20%;
-  font-size: 0.9rem;
+.adress p {
+  display: inline-flex;
+  font-size: 1.1rem;
   font-weight: 400;
 }
 
-.adress {
-  font-size: 1.1rem;
+.phone p:first-child,
+.adress p:first-child {
+  font-size: 0.9rem;
   font-weight: 400;
+  width: 110px;
 }
 
 .map {
@@ -932,7 +931,6 @@ a {
   background-color: #fff;
   border: none;
   font-family: inherit;
-  /* color: #8C969A; */
 }
 
 .message-form__messsage {
@@ -971,24 +969,294 @@ footer p {
 /*============================ ADAPTIVE =================================*/
 
 @media only screen and (max-width: 1200px) {
+
+  html {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  /*======================= MAIN SCREEN ================================*/
+  .main-screen {
+    margin-top: 60px;
+  }
+  
+  .main-screen__image {
+    width: 40%;
+    padding: 0 30px;
+  }
+  
+  .main-screen__text {
+    width: 50%;
+  }
+  
+  .title {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
   
   .main-screen__form {
-    padding: 35px 70px;
+    padding: 35px 60px;
   }
 
   .main-screen__form > p {
-    /* font-weight: 600;
-    line-height: 1.5rem; */
     width: 42%;
   }
 
   .contact-form__input {
-    width: 264px;
-    height: 60px;
-    padding: 20px;
-    font-size: 0.8rem;
-    font-weight: 400;
-    line-height: 1.1rem;
+    width: 244px;
     margin-right: 20px;
   }
+
+  /*================================ ABOUT ========================*/
+
+  .about__contant {
+    margin: 0 50px;
+    padding: 50px 50px 0;
+  }
+
+  /*================================ EXPERTS ========================*/
+
+  .content-list {
+    gap: 20px;
+  }
+
+  /*======================== POSTS ==================================*/
+  
+  .posts {
+    padding-bottom: 70px;
+  }
+
+  .posts__card:not(:last-child) {
+    padding-right: 20px;
+  }
+
+  /*======================== TRUST ==================================*/
+  .trust {
+    margin-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  /*========================= CONTACTS ==============================*/
+
+  .contacts {
+    margin-top: 70px;
+  }
+
+  .content__left {
+    width: 57%;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+
+  html {
+    /* font-size: 14px; */
+  }
+  
+  /*======================= MAIN SCREEN ================================*/
+  
+  .main-screen {
+    margin-top: 50px;
+  }
+  
+  .main-screen__image {
+    width: 50%;
+    padding: 0 20px;
+  }
+  
+  .main-screen__text {
+    width: 45%;
+  }
+  
+  .title {
+    font-size: 3rem;
+  }
+
+  .main-screen__form > p {
+    width: 45%;
+    font-size: 0.9rem;
+  }
+
+  .contact-form__input {
+    width: 200px;
+    margin-right: 15px;
+  }
+
+  /*================================ ABOUT ===============================*/
+
+  .article-subtitle {
+    margin-top: 25px;
+  }
+  .about__text {
+    margin-top: 25px;
+    padding-bottom: 50px;
+  }
+
+  ._gray {
+    padding: 30px 50px;
+  }
+
+  /*===================================== EXPERTS ========================*/
+
+  .experts {
+    padding-top: 70px;
+  }
+
+  .content-list {
+    margin-top: 40px;
+    margin-bottom: 70px;
+  }
+
+  /*============================= EXPERIENCE ==============================*/
+
+  .experience {
+    padding-top: 70px;
+  }
+
+  .experience-img__container {
+    margin-top: 50px;
+  }
+
+  /*=========================== SERVICES  =============================*/
+
+  .services {
+    padding-top: 70px;
+  }
+
+  .services__list {
+    margin-top: 40px;
+  }
+
+  ._services-header {
+    margin-bottom: 10px;
+  }
+
+  ._services {
+    padding: 30px;
+    margin-bottom: 20px;
+  }
+
+  ._services:nth-child(odd) {
+    margin-right: 20px;
+  }
+
+  /*=========================== OUTSORCING ===============================*/
+
+  .outsourcing {
+    padding: 70px 0;
+  }
+
+  .outsourcing__text {
+    width: 60%;
+  }
+
+  .outsourcing .info-block {
+    width: 35%;
+  }
+
+  /*=========================== WHO ===============================*/
+
+  .who {
+    margin-top: 70px;
+    height: 1050px;
+  }
+
+  .who__container {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+
+  /*=============================== PREFERENCES ===========================*/
+
+  .preferences {
+    margin-top: 70px;
+    height: 520px;
+  }
+
+  .preferences__container {
+    margin-bottom: 20px;
+  }
+
+  /*============================= GROWTH =================================*/
+
+  .growth {
+    margin-top: 30px;
+  }
+
+  .growth__container {
+    width: 90%;
+    padding: 40px 50px;
+  }
+
+ /*=============================== START ================================*/
+
+  .start {
+    margin-top: 70px;
+  }
+
+/*================================== TRUST ============================*/
+
+  .trust {
+    margin-top: 70px;
+    padding-bottom: 70px;
+    border-bottom: 1px solid #E8E8E8;
+  }
+
+  .trust__container {
+    gap: 15px;
+  }
+
+  /*============================ CONTACT ============================*/
+  
+  .adress p {
+    font-size: 1rem;
+  }
+  
+  .phone p:first-child,
+  .adress p:first-child {
+    width: 100px;
+  }
+  
+}
+
+@media only screen and (max-width: 920px) {
+
+  /*============================ MAIN SCREEN =========================*/
+  
+  .main-screen {
+    margin-top: 20px;
+  }
+
+  .main-screen__text {
+    justify-content: center;
+  }
+  
+  .title {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .main-screen__form {
+    padding: 30px 45px;
+  }
+
+  .main-screen__form > p {
+    width: 55%;
+    font-size: 1rem;
+  }
+
+  .contact-form__input {
+    width: 150px;
+    height: 60px;
+    padding: 15px;
+  }
+
+  .main-screen__form .button {
+    padding: 15px 20px;
+  }
+
 }
