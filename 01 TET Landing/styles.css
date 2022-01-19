@@ -37,7 +37,7 @@ a {
 .wrapper {
   max-width: 1920px;
   background-color: #fff;
-  background-image: url(src/img/bg_2-min.jpg);
+  background-image: url(src/img/bg_2.jpg);
   background-position-x: center;
   background-repeat: no-repeat;
   margin: 0 auto;
@@ -144,6 +144,34 @@ a {
   border: none;
 }
 
+.burger {
+  display: none;
+  width: 2rem;
+  height: 2px;
+  background-color: #5477BB;
+  position: relative;
+}
+
+.burger::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 2rem;
+  height: 2px;
+  background-color: #5477BB;
+  transform: translateY(-0.5rem);
+}
+
+.burger::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 2rem;
+  height: 2px;
+  background-color: #5477BB;
+  transform: translateY(0.5rem);
+}
+
 .menu {
   margin: 20px 0;
 }
@@ -190,6 +218,7 @@ a {
   display: inherit;
   flex-direction: column;
   justify-content: space-around;
+  width: 35rem;
 }
 
 .title {
@@ -313,20 +342,19 @@ a {
   margin-top: 45px;
   margin-bottom: 100px;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
 }
 
 .content-list__item {
   display: block;
-  width: 25%;
-  max-height: 385px;
+  width: 16rem;
 }
 
 .expert-img {
   width: 100%;
-  height: 286px;
+  height: 20rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -432,7 +460,7 @@ a {
 .info-block {
   position: absolute;
   top: 100px;
-  right: -100px;
+  right: 0;
   width: 40%;
   padding: 74px 67px;
   background-color: #F69A1B;
@@ -462,6 +490,7 @@ a {
   margin-top: 46px;
   display: flex;
   flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 ._services-header {
@@ -475,12 +504,7 @@ a {
 
 ._services {
   box-sizing: border-box;
-  margin-bottom: 30px;
   width: 48%;
-}
-
-._services:nth-child(odd) {
-  margin-right: 30px;
 }
 
 ._services ul {
@@ -510,6 +534,11 @@ a {
 .who {
   margin-top: 75px;
   height: 960px;
+  position: relative;
+}
+
+.who__header {
+  position: absolute;
 }
 
 .who__contant {
@@ -524,11 +553,12 @@ a {
 .who__container {
   width: 50%;
   margin-bottom: 50px;
-}
-
-.who__container:not(:first-child) {
   border-left: 2px solid #5477BB;
   padding: 0 25px 0 41px;
+}
+
+.who__container:first-child {
+  margin-top: 180px;
 }
 
 .who__title {
@@ -569,6 +599,15 @@ a {
 .preferences {
   margin-top: 100px;
   height: 510px;
+  position: relative;
+}
+
+.preferences__header {
+  position: absolute;
+}
+
+.preferences__content {
+  height: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -577,6 +616,10 @@ a {
 .preferences__container {
   width: 50%;
   margin-bottom: 30px;
+}
+
+.preferences__container:first-child {
+  margin-top: 100px;
 }
 
 .preferences__title {
@@ -628,6 +671,7 @@ a {
 }
 
 .growth__container > h3 {
+  width: 80%;
   font-weight: 600;
   font-size: 1.8rem;
   line-height: 2.8rem;
@@ -704,24 +748,16 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .posts__card {
-  width: 33.33%;
-}
-
-.posts__card:not(:last-child) {
-  padding-right: 30px;
+  width: 31%;
 }
 
 .posts__img {
   position: relative;
   height: 230px;
-}
-
-.posts__img img {
-  width: 100%;
-  height: 100%;
 }
 
 .datestamp {
@@ -1020,17 +1056,17 @@ footer p {
   /*================================ EXPERTS ========================*/
 
   .content-list {
-    gap: 20px;
+    gap: 1rem;
+  }
+
+  .content-list__item {
+    width: 14rem;
   }
 
   /*======================== POSTS ==================================*/
   
   .posts {
     padding-bottom: 70px;
-  }
-
-  .posts__card:not(:last-child) {
-    padding-right: 20px;
   }
 
   /*======================== TRUST ==================================*/
@@ -1051,10 +1087,6 @@ footer p {
 }
 
 @media only screen and (max-width: 1020px) {
-
-  html {
-    /* font-size: 14px; */
-  }
   
   /*======================= MAIN SCREEN ================================*/
   
@@ -1110,6 +1142,10 @@ footer p {
     margin-bottom: 70px;
   }
 
+  .content-list__item {
+    width: 13.5rem;
+  }
+
   /*============================= EXPERIENCE ==============================*/
 
   .experience {
@@ -1118,6 +1154,10 @@ footer p {
 
   .experience-img__container {
     margin-top: 50px;
+  }
+
+  .experience-img__container .info-block {
+    width: 30rem;
   }
 
   /*=========================== SERVICES  =============================*/
@@ -1136,11 +1176,6 @@ footer p {
 
   ._services {
     padding: 30px;
-    margin-bottom: 20px;
-  }
-
-  ._services:nth-child(odd) {
-    margin-right: 20px;
   }
 
   /*=========================== OUTSORCING ===============================*/
@@ -1161,7 +1196,7 @@ footer p {
 
   .who {
     margin-top: 70px;
-    height: 1050px;
+    height: 1000px;
   }
 
   .who__container {
@@ -1213,6 +1248,7 @@ footer p {
   
   .adress p {
     font-size: 1rem;
+    width: 20rem;
   }
   
   .phone p:first-child,
@@ -1245,7 +1281,7 @@ footer p {
   }
 
   .main-screen__form > p {
-    width: 55%;
+    width: 50%;
     font-size: 1rem;
   }
 
@@ -1259,4 +1295,568 @@ footer p {
     padding: 15px 20px;
   }
 
+}
+
+@media only screen and (max-width: 920px) {
+  .main-screen__image {
+    width: 45%;
+  }
+
+  /*=========================== EXPERTS ============================*/
+
+  .content-list {
+    gap: 2rem;
+    justify-content: space-evenly;
+  }
+
+  .content-list__item {
+    width: 20rem;
+  }
+
+  .expert-img {
+    height: 20rem;
+  }
+
+  /*=========================== EXPERIENCE ==========================*/
+
+  .experience__header .header__left {
+    width: 55%;
+  }
+
+  /*=========================== WHO ==========================*/
+
+  .who {
+    height: 1150px;
+  }
+
+  /*=========================== PREFERENCES ==========================*/
+
+  .preferences {
+    height: 660px;
+  }
+
+  .preferences__header {
+    width: 20rem;
+  }
+
+  .preferences__container:first-child {
+    margin-top: 120px;
+  }
+  
+  .preferences__title > span {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .preferences__text {
+    padding: 0 1.5rem 0 0;
+  }
+
+
+  /*============================= FROM =============================*/
+  
+  .form__text {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  /*============================= POSTS =============================*/
+  .posts__container {
+    gap: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  
+  html {
+    font-size: 14px;
+  }
+
+  .wrapper {
+    background-image: url(src/img/bg_2-min.jpg);
+  }
+
+  /*============================= HEADER =============================*/
+  
+  .header {
+    height: 100px;
+  }
+
+  .header__contacts {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  /*=========================== MAIN SCREEN =========================*/
+  
+  .main-screen {
+    margin-top: 30px;
+  }
+
+  .main-screen__image {
+    width: 20rem;
+  }
+  
+  .main-screen__text {
+    width: 20rem;
+  }
+  
+  .title {
+    margin-bottom: 10px;
+  }
+  
+  .main-screen__text .list__item {
+    line-height: 2rem;
+  }
+  
+  .main-screen__form {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  .main-screen__form > p {
+    width: 80%;
+    margin: 1rem;
+  }
+
+  .main-screen__form form {
+    display: inherit;
+    flex-wrap: wrap;
+  }
+  
+  .contact-form__input,
+  .main-screen__form button {
+    width: 15rem;
+    margin: 1rem;
+  }
+
+  /*=========================== ABOUT ===============================*/
+
+  .about__contant {
+    margin: 0;
+  }
+
+  /*=========================== EXPERTS ============================*/
+
+  .article__header .button-block {
+    display: none;
+  }
+  
+  .content-list {
+    min-width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+  }
+
+  .content-list__item {
+    width: 23rem;
+  }
+
+  .expert-img {
+    height: 23rem;
+  }
+
+  /*=========================== EXPERIENCE ==========================*/
+
+  .experience__header {
+    display: block;
+  }
+
+  .experience__header .header__left {
+    width: 100%;
+  }
+
+  .experience__header .article-title {
+    width: 30rem;
+  }
+
+  .experience-text {
+    margin-top: 2rem;
+  }
+
+  .experience__header .list__block {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .experience__header .list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(15rem, 1fr));
+    gap: 1rem;
+  }
+
+  .experience-img__container {
+    height: auto;
+  }
+
+  .experience-img {
+    height: 550px;
+  }
+
+  .experience-img,
+  .experience-img__container .info-block {
+    position: initial;
+    width: 100%;
+  }
+
+  .experience-img__container .info-block__text {
+    font-size: 1rem;
+  }
+
+  /*=========================== SERVICES  ================================*/
+  
+  ._services-header span {
+    display: block;
+  }
+
+  ._services ul {
+    padding-left: 0;
+  }
+
+  /*=========================== OUTSORCING ==============================*/
+
+  .outsourcing {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .outsourcing__text {
+    flex: 100%;
+  }
+
+  .outsourcing .info-block {
+    flex: 100%;
+    margin-top: 2.5rem;
+    padding: 2.5rem;
+  }
+
+  .outsourcing .info-block__header {
+    font-size: 5rem;
+  }
+
+  /*=========================== WHO ==========================*/
+
+  .who {
+    height: 900px;
+  }
+
+  .who__header {
+    position: initial;
+    margin-bottom: 2.5rem;
+  }
+
+  .who__contant {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: fit-content;
+    height: auto;
+    margin-bottom: 4rem;
+  }
+
+  .who__container:first-child {
+    margin-top: 0px;
+  }
+
+  .who__container {
+    width: 20rem;
+    padding: 0 1rem;
+  }
+
+  /*=========================== PREFERENCES ==========================*/
+
+  .preferences {
+    height: auto;
+  }
+
+  .preferences__header {
+    position: initial;
+    margin-bottom: 3rem;
+  }
+
+  .preferences__content {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: fit-content;
+  }
+
+  .preferences__container:first-child {
+    margin-top: 0;
+  }
+
+  .preferences__container {
+    width: 20rem;
+  }
+
+  /*=========================== GROWTH =========================*/
+
+  .growth__container {
+    width: 100%;
+  }
+
+  .growth__container .article-subtitle {
+    font-weight: 800;
+    font-size: 1.5rem;
+  }
+
+  .growth__container > h3 {
+    width: 100%;
+  }
+
+  /*=========================== POSTS =========================*/
+
+  .article__header .button-block {
+    display: none;
+  }
+
+  .posts__container {
+    flex-wrap: nowrap;
+    width: fit-content;
+  }
+
+  .posts__card {
+    width: 20rem;
+  }
+
+  /*=========================== TRUST =========================*/
+
+  .trust__container {
+    width: fit-content;
+  }
+
+  /*========================== CONTACTS =======================*/
+
+  .contacts__content {
+    flex-wrap: wrap;
+  }
+
+  .content__left {
+    width: 100%;
+  }
+
+  .content__right {
+    width: 100%;
+  } 
+
+  .message-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .message-form__name,
+  .message-form__email,
+  .message-form__text,
+  .message-form .button {
+    width: 46%;
+  }
+
+  .message-form__messsage {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  /*=========================== MAIN SCREEN =========================*/
+  
+  .main-screen {
+    margin-top: 30px;
+  }
+
+  .main-screen__image {
+    width: 20rem;
+    padding: 0;
+    margin: 0 auto;
+  }
+  
+  .main-screen__text {
+    width: 30rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+  
+  .main-screen__text .list__item {
+    line-height: 2.5rem;
+  }
+
+  .main-screen__form {
+    padding: 1.5rem 1rem;
+  }
+
+  /*=========================== ABOUT ===============================*/
+
+  .about__contant {
+    padding: 3rem 1.5rem;
+    border-left: none;
+  }
+
+  .about__text {
+    padding-bottom: 0;
+  }
+
+  /*=========================== EXPERTS ===============================*/
+
+  .content-list__item {
+    width: 17rem;
+  }
+
+  .expert-img {
+    height: 17rem;
+  }
+
+  /*=========================== EXPERIENCE =============================*/
+
+  .experience {
+    font-size: 1.2rem;
+  }
+
+  .experience__header .article-title {
+    width: 100%;
+  }
+
+  .experience__header .list {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-img__container .info-block {
+    padding: 3.5rem 2rem;
+  }
+
+  .experience-img__container .info-block__header {
+    font-size: 2.7rem;
+    line-height: 2.5rem;
+  }
+
+  /*=========================== SERVICES  ================================*/
+  
+  ._services {
+    flex: 100%;
+  }
+
+  /*=========================== PREFERENCES ==========================*/
+
+  .preferences__container {
+    width: 18rem;
+  }
+
+  
+  /*=========================== GROWTH =========================*/
+
+  .growth__container {
+    padding: 4rem 2.5rem;
+  }
+
+  .growth__container .article-subtitle {
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .growth__container > h3 {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+
+  /*=========================== START =========================*/
+
+  .start .article-title {
+    font-size: 2.3rem;
+  }
+
+  .start__container {
+    flex-direction: column;
+  }
+
+  .step__title,
+  .step__subtitle {
+    display: inline-block;
+  }
+
+  .step__subtitle {
+    padding-left: 1rem;
+  }
+
+  .step__text {
+    margin: 1.5rem 0;
+  }
+
+  /*============================= FROM =============================*/
+
+  .form {
+    margin: 65px 0;
+    padding: 4rem 3rem;
+  }
+
+  .form__title {
+    font-size: 1.6rem;
+  }
+
+  .form__text {
+    font-size: 1rem;
+  }
+
+  /*=========================== POSTS =========================*/
+
+  .posts__card {
+    width: 17rem;
+  }
+
+  /*=========================== CONTACTS =========================*/
+
+  .adress p:not(:first-child) {
+    margin-bottom: 1rem;
+  }
+
+  .subscribe__input input {
+    width: 80%;
+  }
+
+  .subscribe__input:hover .subscribe__button::before,
+  .subscribe__input > input:focus + .subscribe__button::before {
+    margin-right: 0;
+}
+
+  .subscribe__button {
+    transform: none;
+  }
+  
+  .subscribe__input:hover .subscribe__button,
+  .subscribe__input > input:focus + .subscribe__button {
+    transform: scale(1.2);
+  }
+  
+  .subscribe__button::before {
+    margin-right: 0;
+  }
+
+  .subscribe__button::after {
+    display: none;
+  }
+  
+  .message-form {
+    padding: 4rem 2rem;
+  }
+
+  .message-form label {
+    margin-bottom: 2rem;
+  }
+
+  .message-form__name,
+  .message-form__email,
+  .message-form__text,
+  .message-form .button {
+    width: 100%;
+  }
 }
