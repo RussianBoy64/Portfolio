@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800;900&display=swap" rel="stylesheet">  
+  <title>ТЕТ | Бухгалтерское обслуживание</title>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header__top">
+          <div class="header__logo">
+            <a href="#header" class="logo-link" >
+              <svg width="162" height="61" viewBox="0 0 162 61" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <rect width="162" height="61" fill="url(#pattern0)"/>
+              <defs>
+              <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <use xlink:href="#image0_75_170" transform="translate(0 -0.00163934) scale(0.00444444 0.0118033)"/>
+              </pattern>
+              <image id="image0_75_170" width="225" height="85" xlink:href="data:image/png;base64,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"/>
+              </defs>
+              </svg>
+            </a>
+          </div>
+          <div class="header__contacts">
+            <a href="tel:380441541314" class="contacts__item">
+              <span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.6625 17.505H14.6392C11.4378 17.4262 8.38275 16.1479 6.07919 13.9233C3.85379 11.6219 2.57477 8.56797 2.49576 5.3675C2.49104 4.91916 2.66707 4.4878 2.98419 4.17083L5.24586 1.91083C5.57127 1.58551 6.09877 1.58551 6.42419 1.91083L9.75752 5.24417C10.0828 5.56958 10.0828 6.09708 9.75752 6.4225L8.42752 7.75C8.6742 8.6716 9.12858 9.5245 9.75586 10.2433C10.4734 10.8708 11.3252 11.3255 12.2459 11.5725L13.5792 10.2442C13.9046 9.91885 14.4321 9.91885 14.7575 10.2442L18.0909 13.5775C18.4162 13.9029 18.4162 14.4304 18.0909 14.7558L15.8292 17.0167C15.5208 17.3283 15.1009 17.504 14.6625 17.505ZM5.83336 3.67917H5.82919L4.16252 5.34917C4.23048 8.11471 5.33446 10.7539 7.25586 12.7442C9.24621 14.6649 11.8849 15.7688 14.65 15.8375L16.3225 14.1667L14.1625 12.0125L13.085 13.0892C12.9309 13.245 12.7209 13.3329 12.5017 13.3333C12.4432 13.3334 12.3848 13.3272 12.3275 13.315C10.9389 13.0078 9.64951 12.3571 8.57752 11.4225C7.6429 10.3505 6.9922 9.06114 6.68502 7.6725C6.62707 7.39647 6.71268 7.10986 6.91252 6.91083L7.98919 5.83333L5.83336 3.67917Z"/>
+                </svg>
+            </span>+38 044 154 13 14
+            </a>
+            <div class="social">
+              <a href="">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_32_452)">
+                <path d="M21.1942 2.33729C20.5989 1.78886 18.1895 0.0404199 12.8177 0.0169824C12.8177 0.0169824 6.48486 -0.362705 3.40049 2.46854C1.68486 4.18417 1.08017 6.70135 1.01455 9.81854C0.948924 12.9357 0.869237 18.7763 6.49892 20.3607H6.50361L6.49892 22.7795C6.49892 22.7795 6.46142 23.7592 7.1083 23.956C7.88642 24.1998 8.3458 23.4545 9.09111 22.6529C9.49892 22.2123 10.0614 21.5654 10.488 21.0732C14.3411 21.3967 17.2989 20.656 17.6364 20.5482C18.4146 20.2951 22.8161 19.7326 23.5286 13.892C24.2692 7.86385 23.1724 4.05761 21.1942 2.33729ZM21.8458 13.4514C21.2411 18.3263 17.6739 18.6357 17.0177 18.8467C16.7364 18.9357 14.1349 19.5826 10.8677 19.3717C10.8677 19.3717 8.43017 22.3107 7.6708 23.0748C7.42236 23.3232 7.15049 23.2998 7.15517 22.8076C7.15517 22.4842 7.17392 18.7904 7.17392 18.7904C7.16924 18.7904 7.16924 18.7904 7.17392 18.7904C2.40205 17.4685 2.6833 12.4951 2.73486 9.89354C2.78642 7.29198 3.27861 5.15917 4.73174 3.72479C7.34267 1.35761 12.7192 1.70917 12.7192 1.70917C17.2614 1.72792 19.4364 3.09667 19.9427 3.55604C21.6161 4.99042 22.4692 8.42167 21.8458 13.4514ZM15.3302 9.66385C15.3489 10.067 14.7442 10.0951 14.7255 9.69198C14.6739 8.66073 14.1911 8.15917 13.1974 8.10292C12.7942 8.07948 12.8317 7.47479 13.2302 7.49823C14.538 7.56854 15.2645 8.31854 15.3302 9.66385ZM16.2817 10.1935C16.3286 8.20604 15.0864 6.64979 12.7286 6.47635C12.3302 6.44823 12.3724 5.84354 12.7708 5.87167C15.4895 6.06854 16.938 7.93885 16.8864 10.2076C16.8817 10.6107 16.2724 10.592 16.2817 10.1935ZM18.4849 10.8217C18.4895 11.2248 17.8802 11.2295 17.8802 10.8264C17.852 7.00604 15.3067 4.92479 12.2177 4.90135C11.8192 4.89667 11.8192 4.29667 12.2177 4.29667C15.6724 4.32011 18.4521 6.70604 18.4849 10.8217ZM17.9552 15.4201V15.4295C17.4489 16.3201 16.5021 17.3045 15.5271 16.9904L15.5177 16.9763C14.5286 16.6998 12.1989 15.4998 10.727 14.3279C9.96767 13.7279 9.27392 13.0201 8.73955 12.3404C8.25674 11.7357 7.76924 11.0185 7.2958 10.156C6.29736 8.35135 6.07705 7.5451 6.07705 7.5451C5.76299 6.5701 6.74267 5.62323 7.63799 5.11698H7.64736C8.07861 4.89198 8.49111 4.96698 8.76767 5.29979C8.76767 5.29979 9.34892 5.99354 9.59736 6.33573C9.83174 6.65448 10.1458 7.16542 10.3099 7.45135C10.5958 7.96229 10.4177 8.4826 10.1364 8.69823L9.57392 9.14823C9.28799 9.37792 9.32549 9.80448 9.32549 9.80448C9.32549 9.80448 10.1599 12.9592 13.2771 13.756C13.2771 13.756 13.7036 13.7935 13.9333 13.5076L14.3833 12.9451C14.5989 12.6639 15.1192 12.4857 15.6302 12.7717C16.3192 13.1607 17.1958 13.7654 17.7771 14.3138C18.1052 14.581 18.1802 14.9888 17.9552 15.4201Z" fill="#7B519D"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_32_452">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg>
+              </a>
+              <a href="">
+                  <svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.939 4.62187L17.7703 19.5656C17.5312 20.6203 16.9078 20.8828 16.0218 20.3859L11.1937 16.8281L8.86403 19.0687C8.60622 19.3266 8.39059 19.5422 7.89372 19.5422L8.24059 14.625L17.189 6.53906C17.5781 6.19218 17.1047 5.99999 16.5843 6.34687L5.52184 13.3125L0.759342 11.8219C-0.276596 11.4984 -0.295346 10.7859 0.974967 10.2891L19.6031 3.11249C20.4656 2.78906 21.2203 3.30468 20.939 4.62187Z" fill="#40B0EF"/>
+                  </svg>
+              </a>
+            </div>
+            <button class="button blue">оставить заявку</button>
+          </div>
+          <div class="burger"></div>
+          <div class="header__line"></div>
+          <svg width="24" height="24" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="closeBtn">
+            <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="#8C969A"/>
+          </svg>            
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__item"><a href="#about" class="menu__link">о компании</a></li>
+              <li class="menu__item"><a href="#services" class="menu__link">наши услуги</a></li>
+              <li class="menu__item"><a href="#form" class="menu__link">экспресс аудит</a></li>
+              <li class="menu__item"><a href="#posts" class="menu__link">блог</a></li>
+              <li class="menu__item"><a href="#contacts" class="menu__link">контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+      <main class="main">
+        <div class="container">
+          <article class="main-screen">
+            <img src="src/png/V5.png" alt="" class="main-screen__image">
+            <div class="main-screen__text">
+              <h1 class="title">С нами все сложиться!</h1>
+              <ul class="list">
+                <li class="list__item"><span class="list__mark"></span>бухгалтерское сопровождение</li>
+                <li class="list__item"><span class="list__mark"></span>аудиторские услуги</li>
+                <li class="list__item"><span class="list__mark"></span>налоговый консалтинг</li>
+                <li class="list__item"><span class="list__mark"></span>управленческий учет</li>
+              </ul>
+            </div>
+            <div class="main-screen__form">
+              <p>Получите надежное бухгалтерское обслуживание с гарантиями и ответственностью в договоре</p>
+              <form action="">
+                <input type="text" class="contact-form__input" placeholder="+7(_ _ _) _ _ _ - _ _ - _ _">
+                <button class="button blue" type="submit">консультация</button>
+              </form>
+            </div>
+          </article>
+          <article class="about" id="about">
+            <div class="about__contant">
+              <h2 class="article-title">О нас</h2>
+              <h4 class="article-subtitle">Аудиторская фирма ТЕТ успешно оказывает услуги с 1995г.</h4>
+              <p class="about__text">За это время мы сформировали команду профессионалов в сфере бухгалтерского,
+                управленческого учета и аудита, поэтому можем гарантировать компетентность наших сотрудников и высокое качество наших услуг. 
+              </p>
+            </div>
+            <p class="about__contant _gray">Среди наших клиентов не только украинские компании,
+              но и компании нерезиденты различных форм собственности. Наша компания имеет официальное подтверждение АПУ о соответствии
+              системы контроля качества и сертифицированных штатных аудиторов.
+            </p>
+          </article>
+          <article class="experts">
+            <div class="article__header">
+              <h2 class="article-title">Команда экспертов</h2>
+              <div class="button-block">
+                <button class="button">&#8592;</button>
+                <button class="button">&#8594;</button>
+              </div>
+            </div>
+            <h4 class="article-subtitle">Ни один специалист не будет эффективнее целой команды!</h4>
+            <div class="slider-container">
+              <div class="content-list slider">
+                <div class="content-list__card">
+                  <div class="expert-img expert-2"></div>
+                  <p class="expert-name">Иванова Наталья Васильевна</p>
+                  <p class="expert-position">Ведущий бухгалтер</p>
+                </div>
+                <div class="content-list__card">
+                  <div class="expert-img expert-1"></div>
+                  <p class="expert-name">Васильева Анастасия Валерьевна</p>
+                  <p class="expert-position">Первичник</p>
+                </div>
+                <div class="content-list__card">
+                  <div class="expert-img expert-4"></div>
+                  <p class="expert-name">Иванов Петр Геннадиевич</p>
+                  <p class="expert-position">Ведущий бухгалтер</p>
+                </div>
+                <div class="content-list__card">
+                  <div class="expert-img expert-3"></div>
+                  <p class="expert-name">Васильева Анастасия Игоревна</p>
+                  <p class="expert-position">Первичник</p>
+                </div>
+                <div class="content-list__card">
+                  <div class="expert-img expert-4"></div>
+                  <p class="expert-name">Иванов Петр Геннадиевич</p>
+                  <p class="expert-position">Ведущий бухгалтер</p>
+                </div>
+                <div class="content-list__card">
+                  <div class="expert-img expert-3"></div>
+                  <p class="expert-name">Васильева Анастасия Игоревна</p>
+                  <p class="expert-position">Первичник</p>
+                </div>
+                <div class="content-list__card">
+                  <div class="expert-img expert-2"></div>
+                  <p class="expert-name">Иванова Наталья Васильевна</p>
+                  <p class="expert-position">Ведущий бухгалтер</p>
+                </div>
+                <div class="content-list__card">
+                  <div class="expert-img expert-3"></div>
+                  <p class="expert-name">Васильева Анастасия Игоревна</p>
+                  <p class="expert-position">Первичник</p>
+                </div>
+                <div class="content-list__card">
+                  <div class="expert-img expert-2"></div>
+                  <p class="expert-name">Иванова Наталья Васильевна</p>
+                  <p class="expert-position">Ведущий бухгалтер</p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="experience">
+            <div class="experience__header">
+              <div class="header__left">
+                <h2 class="article-title">Как бы стремительно не менялся мир, но</h2>
+                <h4 class="article-subtitle">грамотная финансовая отчетность продолжает определять успешность и обоснованность управленческих решений.</h4>
+                <p class="experience-text">Наш опыт в сфере бухгалтерского и управленческого учета позволяет оперативно оценить состояние предприятия,
+                  подготовить все виды отчетности и уберечь от возможных убытков и штрафов.</p>
+              </div>
+              <div class="list__block">
+                <p class="list__header">мы помогаем:</p>
+                <ul class="list">
+                  <li class="list__item"><span class="list__mark"></span>эффективно планировать</li>
+                  <li class="list__item"><span class="list__mark"></span>контролировать</li>
+                  <li class="list__item"><span class="list__mark"></span>распределять ответственность</li>
+                  <li class="list__item"><span class="list__mark"></span>оптимизировать налогообложение</li>
+                  <li class="list__item"><span class="list__mark"></span>привлекать заемные средства</li>
+                </ul>
+              </div>
+            </div>
+            <h3>Компетентная коммуникация с фискальными службами  - <br> мы всегда на вашей стороне.</h3>
+            <div class="experience-img__container">
+              <div class="experience-img"></div>
+              <div class="info-block">
+                <h6 class="info-block__header">Большой опыт</h6>
+                <p class="info-block__text">досудебных и судебных споров с налоговой. Миллионы гривен отмененных штрафных санкций</p>
+              </div>
+            </div>
+          </article>
+          <article class="services" id="services">
+            <h2 class="article-title">Наши услуги</h2>
+            <div class="services__list">
+              <div class="list__block _services">
+                <p class="list__header _services-header">
+                  <span>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_59_20)">
+                        <path d="M31.144 21.041C31.3691 23.1774 31.0789 25.3881 30.1898 27.4763V27.4771L33.2761 31.463C33.5523 31.8198 34.0702 31.8688 34.4122 31.5745C37.1835 29.1897 39.0172 25.7472 39.2889 21.8734C39.3205 21.4225 38.9577 21.0411 38.5056 21.0411H31.144V21.041Z" fill="#5477BB"/>
+                        <path d="M23.3951 0.785002V10.5314C26.0097 11.6629 28.1802 13.6333 29.566 16.1004H38.5259C38.9689 16.1004 39.3274 15.7337 39.3103 15.291C38.9914 7.00563 32.3855 0.415487 24.2131 0.00100847C23.7672 -0.0215909 23.3951 0.338586 23.3951 0.785002Z" fill="#5477BB"/>
+                        <path d="M18.4023 35.3728C11.2689 35.4466 5.3738 29.6629 5.31612 22.5293C5.25798 15.3399 11.0901 9.47207 18.2664 9.47207V5.64972C18.2664 5.20244 17.893 4.84461 17.4462 4.8651C8.12009 5.29354 0.689135 12.9903 0.689056 22.4228C0.689056 32.1492 8.65565 40.0623 18.3818 39.9998C22.0497 39.9762 25.4499 38.8297 28.2568 36.8869C28.626 36.6313 28.7037 36.1169 28.4288 35.7618L26.0882 32.7386C23.9467 34.3656 21.2863 35.343 18.4023 35.3728Z" fill="#5477BB"/>
+                        <path d="M7.66974 22.4228C7.66974 28.2656 12.4235 33.0193 18.2663 33.0193C24.1086 33.0193 28.8629 28.2666 28.8629 22.4228C28.8629 16.58 24.1086 11.8262 18.2663 11.8262C12.4235 11.8262 7.66974 16.5799 7.66974 22.4228ZM19.4434 15.3832V16.5061C20.6501 16.5061 21.7183 17.0194 22.4715 17.8228C22.9157 18.2968 22.8913 19.0423 22.4174 19.4864C21.9463 19.9277 21.2045 19.9109 20.7538 19.4323C20.4164 19.0729 19.9566 18.8641 19.4912 18.8602C18.5388 18.8602 17.8949 18.8602 16.9465 18.8602C16.2868 18.8602 15.7537 19.3947 15.7537 20.053C15.7537 20.7105 16.2889 21.2457 16.9472 21.2457H19.5862C21.5417 21.2457 23.133 22.8371 23.133 24.7926C23.133 26.6198 21.7276 28.3402 19.4434 28.3402V29.4623C19.4434 30.112 18.9168 30.6394 18.2663 30.6394C17.6166 30.6394 17.0893 30.112 17.0893 29.4623V28.3402C16.2602 28.3402 15.4433 28.2504 14.4864 27.5869C13.9528 27.2165 13.8202 26.4828 14.1906 25.9492C14.561 25.4148 15.2947 25.2822 15.8283 25.6526C16.1108 25.8503 16.4616 25.9815 16.8107 25.9861H19.5862C20.2417 25.9861 20.7789 25.4569 20.7789 24.7926C20.7789 24.135 20.2438 23.5998 19.5862 23.5998C18.4184 23.5998 18.1777 23.5998 16.9472 23.5998C14.991 23.5998 13.3996 22.0084 13.3996 20.053C13.3996 18.22 14.8101 16.5061 17.0893 16.5061V15.3832C17.0893 14.7335 17.6166 14.2062 18.2663 14.2062C18.9168 14.2062 19.4434 14.7335 19.4434 15.3832Z" fill="#5477BB"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_59_20">
+                          <rect width="40" height="40" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </span>Бухгалтерский учет
+                </p>
+                <ul class="list">
+                  <li class="list__item"><span class="list__mark"></span>Ведение бухгалтерского учета</li>
+                  <li class="list__item"><span class="list__mark"></span>Восстановление бухгалтерского учета</li>
+                  <li class="list__item"><span class="list__mark"></span>Постановка бухгалтерского учета</li>
+                  <li class="list__item"><span class="list__mark"></span>Ведение кадрового учет</li>
+                  <li class="list__item"><span class="list__mark"></span>Единоразовая подача отчетности</li>
+                </ul>
+              </div>
+              <div class="list__block _services">
+                <p class="list__header _services-header">
+                  <span>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_348_91)">
+                        <path d="M31.3573 4.25513H17.3524V8.16829C19.9778 8.41315 22.4139 9.55336 24.3019 11.4413C25.6064 12.7458 26.5533 14.3122 27.0954 16.0218H35.6915V18.3739H27.5735C27.6077 18.7342 27.6253 19.098 27.6253 19.4645C27.6253 19.7654 27.6132 20.0645 27.5901 20.3614H35.6915V22.7134H27.1552C26.9333 23.4601 26.6344 24.1806 26.2629 24.8653H28.8331V27.2173H24.5627C24.4773 27.3085 24.3908 27.3989 24.3019 27.4878C22.4141 29.3756 19.978 30.5158 17.3525 30.7607V32.4695H40.0001V12.8722H31.3573V4.25513Z" fill="#5477BB"/>
+                        <path d="M39.3098 10.5201L33.7094 4.94263V10.5201H39.3098Z" fill="#5477BB"/>
+                        <path d="M10.7394 26.6588C12.3198 27.8808 14.2483 28.5433 16.2787 28.5433C18.7037 28.5433 20.9836 27.599 22.6982 25.8842C24.413 24.1695 25.3573 21.8896 25.3573 19.4646C25.3573 17.0396 24.4129 14.7598 22.6982 13.0451C20.9835 11.3303 18.7037 10.386 16.2787 10.386C13.8538 10.386 11.5739 11.3303 9.8592 13.0451C6.59974 16.3045 6.34183 21.446 9.08498 25.0035L7.92217 26.1664L7.16899 26.2295L4.71667 26.4347L9.30865 31.0268L9.51378 28.5765L9.57696 27.8213L10.7394 26.6588ZM11.514 14.6999C12.7867 13.4272 14.4789 12.7263 16.2786 12.7263C18.0785 12.7263 19.7707 13.4272 21.0434 14.6999C22.3161 15.9726 23.017 17.6647 23.017 19.4646C23.017 21.2644 22.3161 22.9565 21.0434 24.2293C19.7707 25.502 18.0786 26.2029 16.2786 26.2029C14.4788 26.2029 12.7867 25.502 11.514 24.2293C10.2413 22.9565 9.54044 21.2644 9.54044 19.4646C9.54044 17.6647 10.2413 15.9726 11.514 14.6999Z" fill="#5477BB"/>
+                        <path d="M0.963725 30.1186C-0.321242 31.4036 -0.321242 33.4946 0.963725 34.7796C1.58623 35.4021 2.41386 35.7449 3.29428 35.7449C4.1747 35.7449 5.00233 35.4021 5.62475 34.7796L7.68816 32.7162L3.02713 28.0552L0.963725 30.1186Z" fill="#5477BB"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_348_91">
+                          <rect width="40" height="40" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </span>аудит
+                </p>
+                <ul class="list">
+                  <li class="list__item"><span class="list__mark"></span>Экспресс аудит</li>
+                  <li class="list__item"><span class="list__mark"></span>Налоговый аудит</li>
+                  <li class="list__item"><span class="list__mark"></span>Кадровый аудит</li>
+                  <li class="list__item"><span class="list__mark"></span>Инициативный аудит предприятия</li>
+                  <li class="list__item"><span class="list__mark"></span>Обязательный аудит предприятия</li>
+                  <li class="list__item"><span class="list__mark"></span>Аудиторское сопровождение</li>
+                </ul>
+              </div>
+              <div class="list__block _services">
+                <p class="list__header _services-header">
+                  <span>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M30.4307 6.82984C30.4307 5.89141 30.0644 5.00797 29.4007 4.34422L26.0865 1.03C25.4319 0.375391 24.5028 0 23.5781 0H23.3767V7.03125H30.4308L30.4307 6.82984Z" fill="#5477BB"/>
+                      <path d="M21.4013 24.1826C21.6256 23.5016 22.017 22.8677 22.5274 22.3538L30.462 14.4513V9.375H22.2276C21.5798 9.375 21.0938 8.85086 21.0938 8.20312V0H3.51562C1.57703 0 0 1.57703 0 3.51562V36.4844C0 38.423 1.57703 40 3.51562 40H26.9151C28.8537 40 30.462 38.423 30.462 36.4844V27.7382L29.1741 28.9948C28.6523 29.512 28.0413 29.8885 27.3523 30.1186L23.6261 31.3626L23.0584 31.3935C22.12 31.3935 21.232 30.9369 20.6804 30.1724C20.1334 29.4114 19.9846 28.4249 20.2821 27.5334L21.4013 24.1826ZM5.85938 21.0938H17.5401C18.1878 21.0938 18.712 21.6179 18.712 22.2656C18.712 22.9134 18.1878 23.4375 17.5401 23.4375H5.85938C5.21164 23.4375 4.6875 22.9134 4.6875 22.2656C4.6875 21.6179 5.21164 21.0938 5.85938 21.0938ZM4.6875 17.5781C4.6875 16.9304 5.21164 16.4062 5.85938 16.4062H17.5401C18.1878 16.4062 18.712 16.9304 18.712 17.5781C18.712 18.2259 18.1878 18.75 17.5401 18.75H5.85938C5.21164 18.75 4.6875 18.2259 4.6875 17.5781ZM4.6875 26.9531C4.6875 26.3054 5.21164 25.7812 5.85938 25.7812H17.5401C18.1878 25.7812 18.712 26.3054 18.712 26.9531C18.712 27.6009 18.1878 28.125 17.5401 28.125H5.85938C5.21164 28.125 4.6875 27.6009 4.6875 26.9531ZM22.2276 32.8125C22.8753 32.8125 23.3995 33.3366 23.3995 33.9844C23.3995 34.6321 22.8754 35.1562 22.2276 35.1562H15.1963C14.5486 35.1562 14.0245 34.6321 14.0245 33.9844C14.0245 33.3366 14.5486 32.8125 15.1963 32.8125H22.2276ZM5.85938 14.0625C5.21164 14.0625 4.6875 13.5384 4.6875 12.8906C4.6875 12.2429 5.21164 11.7188 5.85938 11.7188H22.2276C22.8753 11.7188 23.3995 12.2429 23.3995 12.8906C23.3995 13.5384 22.8753 14.0625 22.2276 14.0625H5.85938Z" fill="#5477BB"/>
+                      <path d="M23.5243 25.2192L22.5048 28.2779C22.352 28.7361 22.788 29.172 23.2462 29.0189L26.3031 27.998L23.5243 25.2192Z" fill="#5477BB"/>
+                      <path d="M32.6257 15.5708L24.9078 23.2887L28.2363 26.6172C29.9807 24.8725 33.3748 21.4779 35.9538 18.8989L32.6257 15.5708Z" fill="#5477BB"/>
+                      <path d="M39.3114 12.2098C38.8994 11.7955 38.2929 11.5586 37.6496 11.5586C37.0064 11.5586 36.4 11.7955 35.9857 12.2109L34.2828 13.9138L37.6107 17.2418C38.543 16.3095 39.1874 15.6651 39.3138 15.5387C40.2292 14.622 40.2291 13.1287 39.3114 12.2098Z" fill="#5477BB"/>
+                      <path d="M39.3137 15.5386C39.3138 15.5386 39.3138 15.5385 39.3138 15.5385C39.3168 15.5355 39.3181 15.5342 39.3206 15.5317C39.3181 15.5342 39.3168 15.5356 39.3137 15.5386Z" fill="#5477BB"/>
+                      <path d="M39.3206 15.5314C39.3243 15.5276 39.3287 15.5233 39.3309 15.521C39.3286 15.5233 39.3243 15.5276 39.3206 15.5314Z" fill="#5477BB"/>
+                      <path d="M39.331 15.5214C39.3385 15.5138 39.3387 15.5136 39.331 15.5214V15.5214Z" fill="#5477BB"/>
+                    </svg>
+                  </span>управленческий учет
+                </p>
+                <ul class="list">
+                  <li class="list__item"><span class="list__mark"></span>Написание учетной политики компании</li>
+                  <li class="list__item"><span class="list__mark"></span>Разработка системы отчетности для ведения управленческого учета</li>
+                  <li class="list__item"><span class="list__mark"></span>Внедрение управленческого учета на базе 1С</li>
+                  <li class="list__item"><span class="list__mark"></span>Подбор системы финансовых показателей для контроля финансового состояния компании</li>
+                </ul>
+              </div>
+              <div class="list__block _services">
+                <p class="list__header _services-header">
+                  <span>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.375 9.68757H25.625C25.8736 9.68757 26.1121 9.58879 26.2879 9.41298C26.4637 9.23716 26.5625 8.99871 26.5625 8.75007V4.37507C26.5625 4.12643 26.4637 3.88797 26.2879 3.71215C26.1121 3.53634 25.8736 3.43757 25.625 3.43757H23.9531C23.7418 2.54799 23.2366 1.7557 22.5193 1.18878C21.8019 0.621866 20.9143 0.313477 20 0.313477C19.0857 0.313477 18.1981 0.621866 17.4807 1.18878C16.7634 1.7557 16.2582 2.54799 16.0469 3.43757H14.375C14.1264 3.43757 13.8879 3.53634 13.7121 3.71215C13.5363 3.88797 13.4375 4.12643 13.4375 4.37507V8.75007C13.4375 8.99871 13.5363 9.23716 13.7121 9.41298C13.8879 9.58879 14.1264 9.68757 14.375 9.68757ZM20 3.43757C20.1854 3.43757 20.3667 3.49255 20.5208 3.59556C20.675 3.69858 20.7952 3.84499 20.8661 4.0163C20.9371 4.18761 20.9557 4.37611 20.9195 4.55796C20.8833 4.73982 20.794 4.90687 20.6629 5.03798C20.5318 5.16909 20.3648 5.25838 20.1829 5.29455C20.001 5.33073 19.8125 5.31216 19.6412 5.2412C19.4699 5.17025 19.3235 5.05008 19.2205 4.89591C19.1175 4.74174 19.0625 4.56049 19.0625 4.37507C19.0625 4.12643 19.1613 3.88797 19.3371 3.71215C19.5129 3.53634 19.7514 3.43757 20 3.43757Z" fill="#5477BB"/>
+                      <path d="M13.125 17.1875H16.875C17.1236 17.1875 17.3621 17.0887 17.5379 16.9129C17.7137 16.7371 17.8125 16.4986 17.8125 16.25V12.5C17.8125 12.2514 17.7137 12.0129 17.5379 11.8371C17.3621 11.6613 17.1236 11.5625 16.875 11.5625H13.125C12.8764 11.5625 12.6379 11.6613 12.4621 11.8371C12.2863 12.0129 12.1875 12.2514 12.1875 12.5V16.25C12.1875 16.4986 12.2863 16.7371 12.4621 16.9129C12.6379 17.0887 12.8764 17.1875 13.125 17.1875ZM14.0625 13.4375H15.9375V15.3125H14.0625V13.4375Z" fill="#5477BB"/>
+                      <path d="M13.125 25.3125H16.875C17.1236 25.3125 17.3621 25.2137 17.5379 25.0379C17.7137 24.8621 17.8125 24.6236 17.8125 24.375V20.625C17.8125 20.3764 17.7137 20.1379 17.5379 19.9621C17.3621 19.7863 17.1236 19.6875 16.875 19.6875H13.125C12.8764 19.6875 12.6379 19.7863 12.4621 19.9621C12.2863 20.1379 12.1875 20.3764 12.1875 20.625V24.375C12.1875 24.6236 12.2863 24.8621 12.4621 25.0379C12.6379 25.2137 12.8764 25.3125 13.125 25.3125ZM14.0625 21.5625H15.9375V23.4375H14.0625V21.5625Z" fill="#5477BB"/>
+                      <path d="M20.625 13.4375C20.3764 13.4375 20.1379 13.5363 19.9621 13.7121C19.7863 13.8879 19.6875 14.1264 19.6875 14.375C19.6875 14.6236 19.7863 14.8621 19.9621 15.0379C20.1379 15.2137 20.3764 15.3125 20.625 15.3125H26.25C26.4986 15.3125 26.7371 15.2137 26.9129 15.0379C27.0887 14.8621 27.1875 14.6236 27.1875 14.375C27.1875 14.1264 27.0887 13.8879 26.9129 13.7121C26.7371 13.5363 26.4986 13.4375 26.25 13.4375H20.625Z" fill="#5477BB"/>
+                      <path d="M26.25 21.5625H20.625C20.3764 21.5625 20.1379 21.6613 19.9621 21.8371C19.7863 22.0129 19.6875 22.2514 19.6875 22.5C19.6875 22.7486 19.7863 22.9871 19.9621 23.1629C20.1379 23.3387 20.3764 23.4375 20.625 23.4375H26.25C26.4986 23.4375 26.7371 23.3387 26.9129 23.1629C27.0887 22.9871 27.1875 22.7486 27.1875 22.5C27.1875 22.2514 27.0887 22.0129 26.9129 21.8371C26.7371 21.6613 26.4986 21.5625 26.25 21.5625Z" fill="#5477BB"/>
+                      <path d="M31.5625 4.375V25C32.8736 24.9986 34.1637 25.3291 35.3125 25.9609V5.3125C35.3119 4.81539 35.1142 4.3388 34.7627 3.98729C34.4112 3.63578 33.9346 3.43806 33.4375 3.4375H30.625C30.8736 3.4375 31.1121 3.53627 31.2879 3.71209C31.4637 3.8879 31.5625 4.12636 31.5625 4.375Z" fill="#5477BB"/>
+                      <path d="M9.375 32.8125C9.12636 32.8125 8.8879 32.7137 8.71209 32.5379C8.53627 32.3621 8.4375 32.1236 8.4375 31.875V4.375C8.4375 4.12636 8.53627 3.8879 8.71209 3.71209C8.8879 3.53627 9.12636 3.4375 9.375 3.4375H6.64063C6.14352 3.43806 5.66693 3.63578 5.31542 3.98729C4.96391 4.3388 4.76618 4.81539 4.76562 5.3125V34.6875C4.76618 35.1846 4.96391 35.6612 5.31542 36.0127C5.66693 36.3642 6.14352 36.5619 6.64063 36.5625H24.7109C24.0791 35.4137 23.7486 34.1236 23.75 32.8125H9.375Z" fill="#5477BB"/>
+                      <path d="M31.5625 25.9375C30.2028 25.9375 28.8735 26.3407 27.743 27.0961C26.6124 27.8516 25.7312 28.9253 25.2108 30.1815C24.6905 31.4378 24.5543 32.8201 24.8196 34.1537C25.0849 35.4874 25.7397 36.7124 26.7011 37.6738C27.6626 38.6353 28.8876 39.2901 30.2213 39.5554C31.5549 39.8207 32.9372 39.6845 34.1934 39.1642C35.4497 38.6438 36.5234 37.7626 37.2788 36.632C38.0343 35.5014 38.4375 34.1722 38.4375 32.8125C38.4354 30.9898 37.7104 29.2423 36.4216 27.9534C35.1327 26.6646 33.3852 25.9396 31.5625 25.9375ZM35.3504 31.6004L31.6004 35.3504C31.4246 35.5262 31.1861 35.6249 30.9375 35.6249C30.6889 35.6249 30.4504 35.5262 30.2746 35.3504L28.3996 33.4754C28.2262 33.2991 28.1294 33.0614 28.1304 32.8141C28.1314 32.5668 28.2301 32.3299 28.405 32.155C28.5799 31.9801 28.8168 31.8814 29.0641 31.8804C29.3114 31.8794 29.5491 31.9762 29.7254 32.1496L30.9375 33.3616L34.0246 30.2746C34.2009 30.1012 34.4386 30.0044 34.6859 30.0054C34.9332 30.0064 35.1701 30.1051 35.345 30.28C35.5199 30.4549 35.6186 30.6918 35.6196 30.9391C35.6206 31.1864 35.5238 31.4241 35.3504 31.6004Z" fill="#5477BB"/>
+                    </svg>
+                  </span>налоговая практика
+                </p>
+                <ul class="list">
+                  <li class="list__item"><span class="list__mark"></span>Сопровождение проверок</li>
+                  <li class="list__item"><span class="list__mark"></span>Досудебные и судебные споры с налоговой</li>
+                  <li class="list__item"><span class="list__mark"></span>Разблокировка налоговых накладных</li>
+                  <li class="list__item"><span class="list__mark"></span>Налоговое планирование и оптимизация</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article class="outsourcing">
+            <div class="outsourcing__text">
+              <h2 class="article-title">Аутсорсинг бухгалтерии</h2>
+              <p class="experience-text">Бизнес предпочитает фокусироваться на своих целевых процессах, а непрофильные функции отдавать сторонним специалистам.
+                Если раньше аутсорсинг бухгалтерии рассматривался исключительно с точки зрения экономии на штатном бухгалтере, то сейчас к нему обращаются с целью</p>
+              <h4 class="article-subtitle">достичь конкурентных преимуществ, снижения финансовых рисков и повышения рентабельности бизнеса.</h4>
+            </div>
+            <div class="info-block">
+              <h6 class="info-block__header">70%</h6>
+              <p class="info-block__text">компаний в мире пользуются услугами бухгалтера на аутсорсе</p>
+            </div>
+          </article>
+          <article class="who">
+            <div class="who__header">
+              <h2 class="article-title">Кому подходит</h2>
+              <h4 class="article-subtitle">бухгалтерский аутсорсинг</h4>
+            </div>
+            <div class="who__contant">
+              <div class="who__container">
+                <h4 class="who__title">Стартапы</h4>
+                <p>Аутсорсинг бухгалтерии дает возможность посвятить себя бизнес-процессам, не распыляясь на вспомогательные функции.</p>
+              </div>
+              <div class="who__container">
+                <h4 class="who__title">ФОПы, малые и средние предприятия</h4>
+                <p>Бухгалтерское сопровождение позволит оптимизировать расходы на содержание штатного специалиста. К тому же ожидать качественный результат и защиту от налоговых рисков от бухгалтера-фрилансера точно не стоит.</p>
+              </div>
+              <div class="who__container">
+                <h4 class="who__title">Сезонный бизнес</h4>
+                <p>Содержать бухгалтерию в период спада активности невыгодно.  Поэтому у компаний сезонного бизнеса аутсорсинг бухгалтерских услуг пользуется спросом.</p>
+              </div>
+              <div class="who__container">
+                <h4 class="who__title">Иностранный бизнес</h4>
+                <p>Бухгалтерское сопровождение позволит оптимизировать расходы на содержание штатного специалиста. К тому же ожидать качественный результат и защиту от налоговых рисков от бухгалтера-фрилансера точно не стоит.</p>
+              </div>
+              <div class="who__container">
+                <h4 class="who__title">Компании с двумя и более учредителями</h4>
+                <p>Передача учетных функций обеспечивает прозрачность учета и независимость бухгалтерии, равный доступ пользователей к результатам учета.</p>
+              </div>
+            </div>
+            <div class="who__img">
+              <div></div>
+            </div>
+          </article>
+          <article class="preferences">
+            <div class="preferences__header">
+              <h2 class="article-title">Наши преимущества</h2>
+            </div>
+            <div class="preferences__content">
+              <div class="preferences__container">
+                <h4 class="preferences__title">
+                  <span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_62_578)">
+                        <path d="M15.9664 11.6533V12.2599C15.9664 13.694 14.7997 14.861 13.3654 14.861H10.6344C9.20032 14.861 8.03339 13.6942 8.03339 12.2599V11.6533H0V19.5162C0 20.8353 1.07318 21.9085 2.39227 21.9085H21.6077C22.9268 21.9085 24 20.8353 24 19.5162V11.6533H15.9664Z" fill="#F69A1B"/>
+                        <path d="M9.45831 12.2599C9.45831 12.9085 9.98584 13.436 10.6344 13.436H13.3654C14.014 13.436 14.5417 12.9085 14.5417 12.2599V11.6533H9.45831V12.2599Z" fill="#F69A1B"/>
+                        <path d="M24 10.2285V8.11267C24 6.79358 22.9268 5.7204 21.6077 5.7204H16.3757V3.94354C16.3757 2.93207 15.553 2.10938 14.5415 2.10938H9.4585C8.44702 2.10938 7.62433 2.93207 7.62433 3.94354V5.7204H2.39227C1.07318 5.7204 0 6.79358 0 8.11267V10.2283H24V10.2285ZM9.04907 3.94354C9.04907 3.71777 9.23273 3.53412 9.4585 3.53412H14.5415C14.7673 3.53412 14.9509 3.71777 14.9509 3.94354V5.7204H9.04907V3.94354Z" fill="#F69A1B"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_62_578">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </span>Профессионализм
+                </h4>
+                <p class="preferences__text">Наличие в штате сертифицированных аудиторов позволяет постоянно проводить контроль качества работы бухгалтеров, а автоматизация учетных процессов помогает  исключить операционные ошибки</p>
+              </div>
+              <div class="preferences__container">
+                <h4 class="preferences__title">
+                  <span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.87552 20.9995H19.1245C19.5388 20.9995 19.8744 20.6639 19.8744 20.2496V14.9999C19.8744 14.5856 19.5388 14.25 19.1245 14.25H4.87552C4.46118 14.25 4.12558 14.5856 4.12558 14.9999V20.2496C4.12558 20.6639 4.46118 20.9995 4.87552 20.9995Z" fill="#F69A1B"/>
+                      <path d="M8.0398 8.67014L7.36204 12.6233C7.25724 13.2338 7.90135 13.7028 8.4504 13.4135L12 11.5476L15.5496 13.4135C16.1029 13.7032 16.7421 13.2304 16.6379 12.6233L15.9601 8.67014L18.832 5.87097C19.2758 5.4383 19.0305 4.68147 18.4162 4.59185L14.4471 4.01533L12.6726 0.418879C12.3974 -0.137767 11.6026 -0.137579 11.3274 0.418879L9.55282 4.01533L5.58374 4.59185C4.97033 4.68138 4.72355 5.43774 5.16799 5.87097L8.0398 8.67014Z" fill="#F69A1B"/>
+                      <path d="M22.6131 20.6247L23.9002 18.3721C24.1854 17.8733 23.8248 17.25 23.2492 17.25H21.6087C21.4792 17.25 21.3743 17.3549 21.3743 17.4844V20.2498C21.3743 21.4923 20.367 22.4996 19.1245 22.4996H17.109C16.9796 22.4996 16.8746 22.6046 16.8746 22.734V23.2496C16.8746 23.6638 17.2104 23.9995 17.6246 23.9995H23.2492C23.8238 23.9995 24.1859 23.3771 23.9002 22.8774L22.6131 20.6247Z" fill="#F69A1B"/>
+                      <path d="M2.62569 20.2498V17.4844C2.62569 17.3549 2.52075 17.25 2.39134 17.25H0.750832C0.176234 17.25 -0.185942 17.8724 0.0997869 18.3721L1.38688 20.6247L0.0997869 22.8774C-0.185426 23.3762 0.175203 23.9995 0.750832 23.9995H6.37541C6.78962 23.9995 7.12536 23.6638 7.12536 23.2496V22.734C7.12536 22.6046 7.02041 22.4996 6.891 22.4996H4.87553C3.63296 22.4996 2.62569 21.4923 2.62569 20.2498Z" fill="#F69A1B"/>
+                    </svg>
+                  </span>Эффективность
+                </h4>
+                <p class="preferences__text">Гибкие условия сотрудничества. Снижение затрат на содержание штатных специалистов. Отсутствие кадровых проблем и привязки к специалисту.  Связь 24/7 без отпусков и больничных</p>
+              </div>
+              <div class="preferences__container">
+                <h4 class="preferences__title">
+                  <span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_348_175)">
+                        <path d="M11.9999 7.42773C9.47833 7.42773 7.427 9.47906 7.427 12.0004C7.427 14.522 9.47833 16.5733 11.9999 16.5733C14.5212 16.5733 16.5726 14.522 16.5726 12.0004C16.5726 9.47906 14.5212 7.42773 11.9999 7.42773ZM14.7148 11.1393L11.4388 14.4152C11.3013 14.5527 11.121 14.6216 10.9408 14.6216C10.7606 14.6216 10.5804 14.5529 10.4429 14.4152L9.19104 13.1633C8.91602 12.8885 8.91602 12.4426 9.19104 12.1676C9.46588 11.8926 9.91174 11.8926 10.1868 12.1676L10.9408 12.9216L13.7191 10.1436C13.9939 9.86853 14.4398 9.86853 14.7148 10.1436C14.9898 10.4184 14.9898 10.8643 14.7148 11.1393Z" fill="#F69A1B"/>
+                        <path d="M22.1948 6.51181L22.194 6.49313C22.1836 6.2626 22.1766 6.01871 22.1724 5.74734C22.1528 4.42404 21.1009 3.32944 19.7774 3.25547C17.018 3.10148 14.8834 2.2017 13.0595 0.423934L13.0439 0.409102C12.449 -0.136367 11.5516 -0.136367 10.9565 0.409102L10.9409 0.423934C9.11704 2.2017 6.9824 3.10148 4.22301 3.25565C2.89971 3.32944 1.84759 4.42404 1.82799 5.74753C1.82397 6.01706 1.81682 6.26095 1.80639 6.49313L1.80529 6.53653C1.75164 9.3503 1.68499 12.8522 2.85649 16.0307C3.50066 17.7786 4.47624 19.298 5.75596 20.547C7.21348 21.9693 9.12253 23.0986 11.43 23.9031C11.5051 23.9293 11.5831 23.9505 11.6626 23.9665C11.7746 23.9888 11.8874 24 12.0002 24C12.113 24 12.226 23.9888 12.3379 23.9665C12.4173 23.9505 12.4959 23.9291 12.5713 23.9028C14.8761 23.0967 16.7831 21.967 18.2393 20.5448C19.5185 19.2955 20.4941 17.7757 21.1388 16.0274C22.3147 12.8394 22.2482 9.33089 22.1948 6.51181ZM11.9998 17.9815C8.70175 17.9815 6.01872 15.2985 6.01872 12.0004C6.01872 8.70229 8.70175 6.01926 11.9998 6.01926C15.2977 6.01926 17.981 8.70229 17.981 12.0004C17.981 15.2985 15.2977 17.9815 11.9998 17.9815Z" fill="#F69A1B"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_348_175">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </span>Надежность
+                </h4>
+                <p class="preferences__text">Страхуем профессиональную ответственность, несем финансовые гарантии за нашу работу и гарантируем качество предоставляемых нами услуг</p>
+              </div>
+              <div class="preferences__container">
+                <h4 class="preferences__title">
+                  <span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_348_193)">
+                        <path d="M2.98332 17.5039L0.725998 19.7612C-0.242081 20.7293 -0.242081 22.3046 0.725998 23.2726C1.19511 23.7418 1.81859 23.9999 2.4818 23.9999C3.145 23.9999 3.76866 23.7418 4.23759 23.2726L6.49492 21.0155L2.98332 17.5039Z" fill="#F69A1B"/>
+                        <path d="M13.9321 8.89697C13.9321 9.37524 14.3212 9.76434 14.7995 9.76434C15.2776 9.76434 15.6667 9.37524 15.6667 8.89697C15.6667 8.41888 15.2776 8.02979 14.7995 8.02979C14.3212 8.02979 13.9321 8.41888 13.9321 8.89697Z" fill="#F69A1B"/>
+                        <path d="M21.301 2.69788C19.5613 0.958191 17.2482 0 14.7878 0C12.3274 0 10.0142 0.958191 8.27435 2.69788C4.85028 6.12213 4.6908 11.5935 7.79608 15.2084L6.99261 16.0117L5.73413 14.7532L3.97778 16.5095L7.48938 20.0211L9.24573 18.2648L7.98724 17.0063L8.79034 16.203C10.4592 17.6391 12.5632 18.4224 14.7876 18.4224C17.248 18.4224 19.5612 17.4642 21.301 15.7245C23.0407 13.9847 23.9989 11.6717 23.9989 9.2113C23.9989 6.75073 23.0407 4.43756 21.301 2.69788ZM19.7545 14.178C18.3853 15.5473 16.5864 16.2321 14.7878 16.2321C12.989 16.2321 11.1903 15.5473 9.82086 14.178C8.49426 12.8513 7.76367 11.0874 7.76367 9.2113C7.76367 7.33502 8.49426 5.57117 9.82086 4.24438C12.5596 1.50568 17.0158 1.50568 19.7545 4.24438C21.0813 5.57117 21.8119 7.33502 21.8119 9.2113C21.8119 11.0874 21.0813 12.8513 19.7545 14.178Z" fill="#F69A1B"/>
+                        <path d="M18.7601 5.23901C17.6649 4.14386 16.2263 3.59619 14.7878 3.59619C13.3491 3.59619 11.9105 4.14386 10.8153 5.23901C9.75439 6.30011 9.16992 7.71075 9.16992 9.2113C9.16992 10.7119 9.75439 12.1227 10.8153 13.1838C13.0058 15.3741 16.5698 15.3741 18.7601 13.1838C19.8212 12.1227 20.4055 10.7119 20.4055 9.2113C20.4055 7.71075 19.8212 6.30011 18.7601 5.23901ZM17.9423 10.0212C17.9363 10.0111 17.6283 9.49677 17.0707 8.99359C17.02 10.2026 16.0208 11.1709 14.7995 11.1709C13.5844 11.1709 12.5889 10.2129 12.5286 9.01245C11.9722 9.51489 11.655 10.0239 11.649 10.034L10.4491 9.30011C10.5159 9.1908 12.1174 6.62347 14.7995 6.62347C17.5697 6.62347 19.095 9.20508 19.1585 9.31494L17.9423 10.0212Z" fill="#F69A1B"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_348_193">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </span>Прозрачность
+                </h4>
+                <p class="preferences__text">Обеспечим объективное представление о финансовом состоянии компании</p>
+              </div>
+              <div class="preferences__container">
+                <h4 class="preferences__title">
+                  <span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_348_12)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0001 17.1311C11.3205 17.1311 10.6622 17.0361 10.038 16.8589L11.9987 21.1277L13.9589 16.8598C13.3357 17.0364 12.6785 17.1311 12.0001 17.1311Z" fill="#F69A1B"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.46057 19.8424C2.28478 19.5163 2.19558 19.139 2.22193 18.7435L2.29819 17.6391L1.56858 17.5796C0.594379 19.1356 0.0261129 20.9417 0.00361295 22.8665C-0.0381058 23.2809 0.286785 23.6407 0.703175 23.6407L7.87257 23.6398C6.83714 22.9701 2.9288 20.711 2.46057 19.8424Z" fill="#F69A1B"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.6992 17.6389L21.7754 18.7433C21.8018 19.1387 21.7126 19.5161 21.5368 19.8422C21.3623 20.1659 21.101 20.4386 20.7816 20.6279L16.1263 23.6385L23.297 23.6376C23.6784 23.6414 23.999 23.3242 23.9973 22.9345C23.9876 20.984 23.4173 19.1536 22.4315 17.5791L21.6992 17.6389Z" fill="#F69A1B"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1469 22.6302L8.08952 15.9737C7.66076 15.6956 7.26303 15.3734 6.90307 15.0134C6.07554 14.1859 5.44704 13.1589 5.09721 12.0127L0.324822 14.9151C-0.206084 15.2264 -0.0353188 16.0358 0.574619 16.0842L3.79432 16.3512L3.62267 18.8368C3.60602 19.0866 3.73723 19.3122 3.94137 19.428L10.2978 23.5387C10.5896 23.7283 10.9798 23.6453 11.1694 23.3535C11.2916 23.1653 11.3005 22.9363 11.2131 22.7465L11.1469 22.6302Z" fill="#F69A1B"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3747 18.8368L20.203 16.3512L23.4205 15.9934C24.0304 15.9451 24.2207 15.1338 23.6898 14.8225L18.9026 12.0142C18.5527 13.1598 17.9243 14.1862 17.0971 15.0134C16.7361 15.3745 16.337 15.6976 15.9067 15.9763L12.8505 22.6302L12.7841 22.7466C12.6968 22.9363 12.7057 23.1655 12.828 23.3537C13.0175 23.6455 13.4077 23.7284 13.6995 23.5389L20.056 19.4281C20.2602 19.3123 20.3913 19.0867 20.3747 18.8368Z" fill="#F69A1B"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15.725C15.1961 15.725 17.8084 13.1126 17.8084 9.91657V8.59375H6.19159V9.91657C6.19159 13.1126 8.80398 15.725 12 15.725Z" fill="#F69A1B"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.78127 7.20633C9.5938 7.20633 14.4063 7.20633 19.2188 7.20633C19.6071 7.20633 19.922 6.89152 19.922 6.50321C19.922 6.11489 19.6071 5.80008 19.2188 5.80008H17.984C17.5819 4.14468 17.2732 2.11095 16.134 0.971746C15.1163 -0.0460077 14.3841 0.446697 13.4812 1.05439C13.0549 1.34126 12.5642 1.67155 12.0021 1.67155C11.4551 1.67155 10.9785 1.33967 10.5629 1.05022C9.66205 0.422744 8.92869 -0.0879611 7.86903 0.971699C6.69448 2.14625 6.34732 4.13413 5.99805 5.80013H4.78131C4.393 5.80013 4.07819 6.11494 4.07819 6.50325C4.07814 6.89152 4.39295 7.20633 4.78127 7.20633Z" fill="#F69A1B"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_348_12">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </span>Конфиденциальность
+                </h4>
+                <p class="preferences__text">Сохраняем полную конфиденциальность и информационную безопасность  ваших данных</p>
+              </div>
+            </div>
+          </article>
+          <article class="growth">
+            <div class="growth__container">
+              <h4 class="article-subtitle">Мы растем вместе с нашими клиентами,</h4>
+              <h3>поэтому делаем все, чтобы ваш бизнес был успешным!</h3>
+            </div>
+          </article>
+          <article class="start">
+            <h2 class="article-title">С чего начать?</h2>
+            <div class="start__container">
+              <div class="start__step">
+                <p class="step__title">1</p>
+                <h4 class="step__subtitle">Консультация</h4>
+                <p class="step__text">Мы с радостью расскажем более подробно о нашей компании и предоставим информацию об услугах.</p>
+              </div>
+              <div class="start__step">
+                <p class="step__title">2</p>
+                <h4 class="step__subtitle">Экспресс-аудит</h4>
+                <p class="step__text">Проводим экспресс аудит предприятия, обсуждаем детали, подбираем оптимальные условия сотрудничества.
+                </p>
+              </div>
+              <div class="start__step">
+                <p class="step__title">3</p>
+                <h4 class="step__subtitle">Договор</h4>
+                <p class="step__text">Согласуем и подписываем договор, Принимаем документы, ключи, доступы. Организуем учет и документооборот.</p>
+              </div>
+            </div>
+          </article>
+          <article class="form" id="form">
+            <h3 class="form__title">Экспресс аудит</h3>
+            <p class="form__text">Сделаем анализ состояния бухгалтерского учета вашей компании. Предоставим
+              рекомендации по оптимизации, сообщим о наличии ошибок и потенциальных налоговых рисках.
+            </p>
+            <button class="button blue">оставить заявку</button>
+          </article>
+          <article class="posts" id="posts">
+            <div class="article__header">
+              <h2 class="article-title">С чего начать?</h2>
+              <div class="button-block">
+                <button class="button">&#8592;</button>
+                <button class="button">&#8594;</button>
+              </div>
+            </div>
+            <div class="slider-container">
+              <div class="posts__container slider">
+                <div class="posts__card">
+                  <div class="posts__img" style="background-image: url(src/img/Rectangle\ 25.jpg);">
+                    <p class="datestamp">25.07.21</p>
+                  </div>
+                  <p class="posts__text">Органический трафик даёт нам право принимать самостоятельные решения</p>
+                </div>
+                <div class="posts__card">
+                  <div class="posts__img" style="background-image: url(src/img/Rectangle\ 25-1.jpg);">
+                    <p class="datestamp">25.07.21</p>
+                  </div>
+                  <p class="posts__text">Светлый лик правового взаимодействия развеял последние сомнения</p>
+                </div>
+                <div class="posts__card">
+                  <div class="posts__img" style="background-image: url(src/img/Rectangle\ 25-2.jpg);">
+                    <p class="datestamp">25.07.21</p>
+                  </div>
+                  <p class="posts__text">Воистину радостный звук: боевой клич героев</p>
+                </div>
+                <div class="posts__card">
+                  <div class="posts__img" style="background-image: url(src/img/Rectangle\ 25-1.jpg);">
+                    <p class="datestamp">25.07.21</p>
+                  </div>
+                  <p class="posts__text">Светлый лик правового взаимодействия развеял последние сомнения</p>
+                </div>
+                <div class="posts__card">
+                  <div class="posts__img" style="background-image: url(src/img/Rectangle\ 25.jpg);">
+                    <p class="datestamp">25.07.21</p>
+                  </div>
+                  <p class="posts__text">Органический трафик даёт нам право принимать самостоятельные решения</p>
+                </div>
+                <div class="posts__card">
+                  <div class="posts__img" style="background-image: url(src/img/Rectangle\ 25-2.jpg);">
+                    <p class="datestamp">25.07.21</p>
+                  </div>
+                  <p class="posts__text">Воистину радостный звук: боевой клич героев</p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="trust">
+            <div class="article__header">
+              <h2 class="article-title">Нам доверяют</h2>
+              <div class="button-block">
+                <button class="button">&#8592;</button>
+                <button class="button">&#8594;</button>
+              </div>
+            </div>
+            <div class="slider-container">
+              <div class="trust__container slider">
+                <div class="trust__card"></div>
+                <div class="trust__card"></div>
+                <div class="trust__card"></div>
+                <div class="trust__card"></div>
+                <div class="trust__card"></div>
+                <div class="trust__card"></div>
+              </div>
+            </div>
+          </article>
+          <article class="contacts" id="contacts">
+            <h2 class="article-title">Контакты</h2>
+            <h4 class="article-subtitle">Хотите обсудить сотрудничество или остались <br> вопросы, – позвоните или напишите нам</h4>
+            <div class="contacts__content">
+              <div class="content__left">
+                <div class="phone">
+                  <div>
+                    <p>Телефон: </p><p>+38 044 259 91 15</p>
+                  </div>
+                  <div>
+                    <p>Мобильный: </p><p>+38 067 111 11 11</p>
+                  </div>
+                </div>
+                <div class="adress">
+                  <div>
+                    <p>Адрес: </p><p>Голосеевский проспект, 89, Киев, 03127, Украина</p>
+                  </div>
+                  <div>
+                    <p>E-mail: </p><p>info@tet-audit.com.ua</p>
+                  </div>
+                </div>
+                <div class="social">
+                  <a href="">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_32_452)">
+                    <path d="M21.1942 2.33729C20.5989 1.78886 18.1895 0.0404199 12.8177 0.0169824C12.8177 0.0169824 6.48486 -0.362705 3.40049 2.46854C1.68486 4.18417 1.08017 6.70135 1.01455 9.81854C0.948924 12.9357 0.869237 18.7763 6.49892 20.3607H6.50361L6.49892 22.7795C6.49892 22.7795 6.46142 23.7592 7.1083 23.956C7.88642 24.1998 8.3458 23.4545 9.09111 22.6529C9.49892 22.2123 10.0614 21.5654 10.488 21.0732C14.3411 21.3967 17.2989 20.656 17.6364 20.5482C18.4146 20.2951 22.8161 19.7326 23.5286 13.892C24.2692 7.86385 23.1724 4.05761 21.1942 2.33729ZM21.8458 13.4514C21.2411 18.3263 17.6739 18.6357 17.0177 18.8467C16.7364 18.9357 14.1349 19.5826 10.8677 19.3717C10.8677 19.3717 8.43017 22.3107 7.6708 23.0748C7.42236 23.3232 7.15049 23.2998 7.15517 22.8076C7.15517 22.4842 7.17392 18.7904 7.17392 18.7904C7.16924 18.7904 7.16924 18.7904 7.17392 18.7904C2.40205 17.4685 2.6833 12.4951 2.73486 9.89354C2.78642 7.29198 3.27861 5.15917 4.73174 3.72479C7.34267 1.35761 12.7192 1.70917 12.7192 1.70917C17.2614 1.72792 19.4364 3.09667 19.9427 3.55604C21.6161 4.99042 22.4692 8.42167 21.8458 13.4514ZM15.3302 9.66385C15.3489 10.067 14.7442 10.0951 14.7255 9.69198C14.6739 8.66073 14.1911 8.15917 13.1974 8.10292C12.7942 8.07948 12.8317 7.47479 13.2302 7.49823C14.538 7.56854 15.2645 8.31854 15.3302 9.66385ZM16.2817 10.1935C16.3286 8.20604 15.0864 6.64979 12.7286 6.47635C12.3302 6.44823 12.3724 5.84354 12.7708 5.87167C15.4895 6.06854 16.938 7.93885 16.8864 10.2076C16.8817 10.6107 16.2724 10.592 16.2817 10.1935ZM18.4849 10.8217C18.4895 11.2248 17.8802 11.2295 17.8802 10.8264C17.852 7.00604 15.3067 4.92479 12.2177 4.90135C11.8192 4.89667 11.8192 4.29667 12.2177 4.29667C15.6724 4.32011 18.4521 6.70604 18.4849 10.8217ZM17.9552 15.4201V15.4295C17.4489 16.3201 16.5021 17.3045 15.5271 16.9904L15.5177 16.9763C14.5286 16.6998 12.1989 15.4998 10.727 14.3279C9.96767 13.7279 9.27392 13.0201 8.73955 12.3404C8.25674 11.7357 7.76924 11.0185 7.2958 10.156C6.29736 8.35135 6.07705 7.5451 6.07705 7.5451C5.76299 6.5701 6.74267 5.62323 7.63799 5.11698H7.64736C8.07861 4.89198 8.49111 4.96698 8.76767 5.29979C8.76767 5.29979 9.34892 5.99354 9.59736 6.33573C9.83174 6.65448 10.1458 7.16542 10.3099 7.45135C10.5958 7.96229 10.4177 8.4826 10.1364 8.69823L9.57392 9.14823C9.28799 9.37792 9.32549 9.80448 9.32549 9.80448C9.32549 9.80448 10.1599 12.9592 13.2771 13.756C13.2771 13.756 13.7036 13.7935 13.9333 13.5076L14.3833 12.9451C14.5989 12.6639 15.1192 12.4857 15.6302 12.7717C16.3192 13.1607 17.1958 13.7654 17.7771 14.3138C18.1052 14.581 18.1802 14.9888 17.9552 15.4201Z" fill="#7B519D"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_32_452">
+                    <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                  </a>
+                  <a href="">
+                      <svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.939 4.62187L17.7703 19.5656C17.5312 20.6203 16.9078 20.8828 16.0218 20.3859L11.1937 16.8281L8.86403 19.0687C8.60622 19.3266 8.39059 19.5422 7.89372 19.5422L8.24059 14.625L17.189 6.53906C17.5781 6.19218 17.1047 5.99999 16.5843 6.34687L5.52184 13.3125L0.759342 11.8219C-0.276596 11.4984 -0.295346 10.7859 0.974967 10.2891L19.6031 3.11249C20.4656 2.78906 21.2203 3.30468 20.939 4.62187Z" fill="#40B0EF"/>
+                      </svg>
+                  </a>
+                  <a href="">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16.5 0H7.5C3.3585 0 0 3.3585 0 7.5V16.5C0 20.6415 3.3585 24 7.5 24H16.5C20.6415 24 24 20.6415 24 16.5V7.5C24 3.3585 20.6415 0 16.5 0ZM21.75 16.5C21.75 19.395 19.395 21.75 16.5 21.75H7.5C4.605 21.75 2.25 19.395 2.25 16.5V7.5C2.25 4.605 4.605 2.25 7.5 2.25H16.5C19.395 2.25 21.75 4.605 21.75 7.5V16.5Z" fill="url(#paint0_linear_74_171)"/>
+                      <path d="M12 6C8.6865 6 6 8.6865 6 12C6 15.3135 8.6865 18 12 18C15.3135 18 18 15.3135 18 12C18 8.6865 15.3135 6 12 6ZM12 15.75C9.933 15.75 8.25 14.067 8.25 12C8.25 9.9315 9.933 8.25 12 8.25C14.067 8.25 15.75 9.9315 15.75 12C15.75 14.067 14.067 15.75 12 15.75Z" fill="url(#paint1_linear_74_171)"/>
+                      <path d="M18.45 6.34997C18.8916 6.34997 19.2495 5.99202 19.2495 5.55047C19.2495 5.10892 18.8916 4.75098 18.45 4.75098C18.0085 4.75098 17.6505 5.10892 17.6505 5.55047C17.6505 5.99202 18.0085 6.34997 18.45 6.34997Z" fill="url(#paint2_linear_74_171)"/>
+                      <defs>
+                        <linearGradient id="paint0_linear_74_171" x1="2.19697" y1="21.8032" x2="21.803" y2="2.19682" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#FFC107"/>
+                          <stop offset="0.507" stop-color="#F44336"/>
+                          <stop offset="0.99" stop-color="#9C27B0"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_74_171" x1="7.75747" y1="16.2425" x2="16.2425" y2="7.75747" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#FFC107"/>
+                          <stop offset="0.507" stop-color="#F44336"/>
+                          <stop offset="0.99" stop-color="#9C27B0"/>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_74_171" x1="17.8847" y1="6.11589" x2="19.0153" y2="4.9852" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#FFC107"/>
+                          <stop offset="0.507" stop-color="#F44336"/>
+                          <stop offset="0.99" stop-color="#9C27B0"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </a>
+                  <a href="">
+                    <svg width="13" height="24" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12.0847 13.5L12.7512 9.15656H8.58356V6.33797C8.58356 5.14969 9.16575 3.99141 11.0323 3.99141H12.927V0.293438C12.927 0.293438 11.2076 0 9.56372 0C6.13153 0 3.88809 2.08031 3.88809 5.84625V9.15656H0.072937V13.5H3.88809V24H8.58356V13.5H12.0847Z" fill="#3B5998"/>
+                    </svg>
+                  </a>
+                </div>
+                <div class="map">
+                  
+                </div>
+                <div class="subscribe">
+                  <form class="subscribe__form" action="" method="post" autocomplete="off">
+                    <label class="subscribe__label" for="sub">E-mail Подпишитесь на нашу рассылку и получайте новости и извещения о событиях и отраслевые отчеты на свою почту.</label>
+                    <div class="subscribe__input">
+                      <input type="email" id="sub" name="e-mail" placeholder="E-mail" required>
+                      <button class="subscribe__button" type="submit"></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="content__right">
+                <form action="" class="message-form" autocomplete="off">
+                  <label for="message-form__name">Отправить сообщение</label>
+                  <input type="text" class="message-form__name" id="message-form__name" name="message-form__name" placeholder="Ваше имя" required>
+                  <input type="email" class="message-form__email" name="message-form__email" placeholder="E-mail" required>
+                  <textarea class="message-form__messsage" name="message-form__messsage" placeholder="Сообщение" required></textarea>
+                  <p class="message-form__text">Нажимая “Отправить” вы автоматически соглашаетесь с политикой конфиденциальности</p>
+                  <input type="submit" value="Отправить" class="button blue">
+                </form>
+              </div>
+            </div>
+          </article>
+        </div>
+      </main>
+      <footer>
+        <p>© 2021 Аудиторская Фирма «ТЕТ». Регистрационный номер 23463607. Все права защищены.</p>
+      </footer>
+      <script src="script.js"></script>
+  </div>
+</body>
+</html>
