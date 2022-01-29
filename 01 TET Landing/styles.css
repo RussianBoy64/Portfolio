@@ -354,18 +354,26 @@ a {
   margin: 0;
 }
 
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  transition: .5s ease-in-out;
+}
+
 .content-list {
   margin-top: 45px;
   margin-bottom: 100px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 30px;
+  gap: 1rem;
 }
 
-.content-list__item {
+.content-list__card {
   display: block;
-  width: 16rem;
+  min-width: calc(25% - (3rem / 4));
 }
 
 .expert-img {
@@ -762,13 +770,12 @@ a {
 .posts__container {
   margin-top: 50px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
 }
 
 .posts__card {
-  width: 31%;
+  min-width: calc(33.33% - (4rem / 3));
 }
 
 .posts__img {
@@ -804,13 +811,14 @@ a {
   margin-top: 50px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 0.8rem;
 }
 
 .trust__card {
-  width: 166px;
+  min-width: calc(16.6% - (4rem / 6));
   height: 90px;
-  border: 1px solid #E8E8E8;
+  box-shadow: inset 0 0 0 1px #E8E8E8;
+  /* border: 1px solid #E8E8E8; */
   background-color: #fff;
 }
 
@@ -1069,26 +1077,32 @@ footer p {
     padding: 50px 50px 0;
   }
 
-  /*================================ EXPERTS ========================*/
-
-  .content-list {
-    gap: 1rem;
-  }
-
-  .content-list__item {
-    width: 14rem;
-  }
-
   /*======================== POSTS ==================================*/
   
   .posts {
     padding-bottom: 70px;
   }
 
+  .posts__container {
+    gap: 1.5rem;
+  }
+  
+  .posts__card {
+    min-width: calc(33.33% - (3rem / 3));
+  }
+
   /*======================== TRUST ==================================*/
   .trust {
     margin-top: 70px;
     padding-bottom: 70px;
+  }
+
+  .trust__container {
+    gap: 1rem;
+  }
+
+  .trust__card {
+    min-width: calc(19.85% - (4rem / 5));
   }
 
   /*========================= CONTACTS ==============================*/
@@ -1158,8 +1172,8 @@ footer p {
     margin-bottom: 70px;
   }
 
-  .content-list__item {
-    width: 13.5rem;
+  .content-list__card {
+    min-width: calc(33.33% - (2rem / 3));
   }
 
   /*============================= EXPERIENCE ==============================*/
@@ -1257,7 +1271,7 @@ footer p {
   }
 
   .trust__container {
-    gap: 15px;
+    gap: 1rem;
   }
 
   /*============================ CONTACT ============================*/
@@ -1318,21 +1332,6 @@ footer p {
     width: 45%;
   }
 
-  /*=========================== EXPERTS ============================*/
-
-  .content-list {
-    gap: 2rem;
-    justify-content: space-evenly;
-  }
-
-  .content-list__item {
-    width: 20rem;
-  }
-
-  .expert-img {
-    height: 20rem;
-  }
-
   /*=========================== EXPERIENCE ==========================*/
 
   .experience__header .header__left {
@@ -1379,8 +1378,15 @@ footer p {
 
   /*============================= POSTS =============================*/
   .posts__container {
-    gap: 1.5rem;
+    gap: 1rem;
   }
+
+  /*============================= TRUST =============================*/
+  .trust__card {
+    min-width: calc(24.7% - (3rem / 4));
+  }
+
+
 }
 
 @media only screen and (max-width: 769px) {
@@ -1467,14 +1473,13 @@ footer p {
   }
   
   .content-list {
-    min-width: fit-content;
     display: flex;
     flex-wrap: nowrap;
     gap: 1.5rem;
   }
 
-  .content-list__item {
-    width: 23rem;
+  .content-list__card {
+    min-width: 20rem;
   }
 
   .expert-img {
@@ -1635,17 +1640,16 @@ footer p {
 
   .posts__container {
     flex-wrap: nowrap;
-    width: fit-content;
   }
 
   .posts__card {
-    width: 20rem;
+    min-width: 21rem;
   }
 
   /*=========================== TRUST =========================*/
 
-  .trust__container {
-    width: fit-content;
+  .trust__card {
+    min-width: 15rem;
   }
 
   /*========================== CONTACTS =======================*/
@@ -1724,12 +1728,8 @@ footer p {
 
   /*=========================== EXPERTS ===============================*/
 
-  .content-list__item {
-    width: 17rem;
-  }
-
-  .expert-img {
-    height: 17rem;
+  .content-list__card {
+    min-width: 17rem;
   }
 
   /*=========================== EXPERIENCE =============================*/
@@ -1826,7 +1826,7 @@ footer p {
   /*=========================== POSTS =========================*/
 
   .posts__card {
-    width: 17rem;
+    min-width: 17rem;
   }
 
   /*=========================== CONTACTS =========================*/
