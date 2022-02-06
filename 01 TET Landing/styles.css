@@ -567,7 +567,7 @@ a {
 
 .who__contant {
   width: 100%;
-  height: 60%;
+  height: 40rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -631,7 +631,7 @@ a {
 }
 
 .preferences__content {
-  height: 100%;
+  height: 33rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -817,9 +817,10 @@ a {
 .trust__card {
   min-width: calc(16.6% - (4rem / 6));
   height: 90px;
-  box-shadow: inset 0 0 0 1px #E8E8E8;
-  /* border: 1px solid #E8E8E8; */
+  box-shadow: inset 0 0 0 1px #8C969A;
   background-color: #fff;
+  background-position: center;
+  background-size: cover;
 }
 
 /*================================ CONTACTS ===========================*/
@@ -866,6 +867,11 @@ a {
 .map {
   height: 190px;
   background-color: #c4c6c7;
+}
+
+.map__content {
+  width: 100%;
+  height: 100%;
 }
 
 .subscribe__label {
@@ -969,6 +975,8 @@ a {
   padding: 30px 60px;
   background-color: #F69A1B;
   color: #fff;
+  overflow: auto;
+  position: relative;
 }
 
 .message-form label {
@@ -987,7 +995,7 @@ a {
   display: block;
   margin-bottom: 10px;
   padding: 20px;
-  width: 264px;
+  width: 100%;
   background-color: #fff;
   border: none;
   font-family: inherit;
@@ -1000,7 +1008,7 @@ a {
 
 .message-form__text {
   margin-top: 16px;
-  width: 264px;
+  width: 100%;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.1rem;
@@ -1010,7 +1018,7 @@ a {
   margin: 23px 0;
 }
 
-/*============================= FOOTER ==================================*/
+/*============================= FOOTER ================================*/
 
 footer {
   background-color: #303B40;
@@ -1026,7 +1034,47 @@ footer p {
   line-height: 1rem;
 }
 
-/*============================ ADAPTIVE =================================*/
+/*============================= MODAL ================================*/
+
+.modal-window {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .6);
+  overflow: auto;
+  z-index: -1;
+  opacity: 0;
+  transition: all 400ms ease-out;
+}
+
+.modal-window__container {
+  width: 40rem;
+}
+
+.closeBtn__modal {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  fill: #fff;
+}
+
+.closeBtn__modal:hover,
+.closeBtn__modal:focus {
+  fill: #5477BB;
+}
+
+.active {
+  opacity: 1;
+  z-index: 150;
+}
+
+/*============================ ADAPTIVE ===============================*/
 
 @media only screen and (max-width: 1200px) {
 
@@ -1075,6 +1123,12 @@ footer p {
   .about__contant {
     margin: 0 50px;
     padding: 50px 50px 0;
+  }
+
+  /*======================== PREFERENCES ============================*/
+
+  .preferences__content {
+    height: 35rem;
   }
 
   /*======================== POSTS ==================================*/
@@ -1344,6 +1398,10 @@ footer p {
     height: 1150px;
   }
 
+  .who__contant {
+    height: 45rem;
+  }
+
   /*=========================== PREFERENCES ==========================*/
 
   .preferences {
@@ -1354,10 +1412,14 @@ footer p {
     width: 20rem;
   }
 
+  .preferences__content {
+    height: 45rem;
+  }
+
   .preferences__container:first-child {
     margin-top: 120px;
   }
-  
+
   .preferences__title > span {
     display: block;
     margin-right: 0;
@@ -1578,7 +1640,6 @@ footer p {
   .who__contant {
     flex-direction: row;
     flex-wrap: nowrap;
-    width: fit-content;
     height: auto;
     margin-bottom: 4rem;
   }
@@ -1588,7 +1649,7 @@ footer p {
   }
 
   .who__container {
-    width: 20rem;
+    min-width: 20rem;
     padding: 0 1rem;
   }
 
@@ -1606,7 +1667,7 @@ footer p {
   .preferences__content {
     flex-direction: row;
     flex-wrap: nowrap;
-    width: fit-content;
+    height: auto;
   }
 
   .preferences__container:first-child {
@@ -1614,7 +1675,7 @@ footer p {
   }
 
   .preferences__container {
-    width: 20rem;
+    min-width: 20rem;
   }
 
   /*=========================== GROWTH =========================*/
@@ -1682,6 +1743,10 @@ footer p {
 
   .message-form__messsage {
     width: 100%;
+  }
+
+  .modal-window__container {
+    height: auto;
   }
 }
 
@@ -1829,6 +1894,12 @@ footer p {
     min-width: 17rem;
   }
 
+  /*=========================== WHO =========================*/
+
+  .who__container {
+    min-width: 18rem;
+  }
+
   /*=========================== CONTACTS =========================*/
 
   .adress p:not(:first-child) {
@@ -1860,10 +1931,6 @@ footer p {
   .subscribe__button::after {
     display: none;
   }
-  
-  .message-form {
-    padding: 4rem 2rem;
-  }
 
   .message-form label {
     margin-bottom: 2rem;
@@ -1874,6 +1941,11 @@ footer p {
   .message-form__text,
   .message-form .button {
     width: 100%;
+  }
+
+  .modal-window__container {
+    height: 100vh;
+    width: 100vw;
   }
 }
 

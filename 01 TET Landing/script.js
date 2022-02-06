@@ -1,19 +1,23 @@
+const windowWidth = document.documentElement.clientWidth
+const body = document.querySelector('body')
+const whoSlider = document.querySelector('.who__contant')
+const preferencesSlider = document.querySelector('.preferences__content')
+
 // Бургер мен
 const burgerBtn = document.querySelector('.burger')
 const closeBtn = document.querySelector('.closeBtn')
 const header = document.querySelector('.header__top')
 const menuBtns = document.querySelectorAll('.menu__item')
-const body = document.querySelector('body')
 
 
 burgerBtn.addEventListener('click', () => {
-  header.classList.toggle('mobile')
-  body.classList.toggle('scroll-hidden')
+  header.classList.add('mobile')
+  body.classList.add('scroll-hidden')
 })
 
 closeBtn.addEventListener('click', () => {
-  header.classList.toggle('mobile')
-  body.classList.toggle('scroll-hidden')
+  header.classList.remove('mobile')
+  body.classList.remove('scroll-hidden')
 })
 
 for (const menuBtn of menuBtns) {
@@ -24,12 +28,8 @@ for (const menuBtn of menuBtns) {
 }
 
 
-//скрываем бургер-меню при увеличени ширины экрана свыше 769px
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 769) {
-    header.classList.remove('mobile')
-  }
-})
+
+
 
 // Общий слайдер для экспертов, постов и партнеров
 
@@ -69,26 +69,27 @@ for (const slider of sliders) {
     slider.style.transform = `translateX(${sliderPosition}px)` //меняем положение слайдера
   })
 
-  // при ресайзе сбрасываем слайдер
+  //скрываем бургер-меню при увеличени ширины экрана свыше 769px
   window.addEventListener('resize', () => {
+    // при ресайзе сбрасываем слайдер
     if (window.innerWidth < 769) {
       firstSlide = 0
       sliderPosition = 0
-      slider.style.transform = `translateX(${sliderPosition}px)` 
+      slider.style.transform = `translateX(${sliderPosition}px)`
+    }
+    if (window.innerWidth > 769) {
+      header.classList.remove('mobile')
     }
   })
-
-
-
 
   //Тач слайдер
   let posStart = 0 // отслеживание позицию при таче
   let posSlider = 0 // ослеживаем текущую позицию слайдера
   let posEnd = 0 // отслеживание позицию при когда юзер убрал палец
-  
+
   function sliderMove() {
     posSlider = sliderPosition - (posStart - posEnd) //сдвигаем слайдер на ширину скролла вправо или лево
-    
+
     // чтобы слайдер не уходил влево дальше 1 слайда
     if (posSlider > 0) {
       firstSlide = 0
@@ -106,26 +107,77 @@ for (const slider of sliders) {
   }
 
   // при касании убираем анимацию и записываем позицию касания 
-  slider.addEventListener('touchstart', (event) => {
+  const touchStart = (event) => {
     slider.style.transition = 'none'
     posStart = event.touches[0].clientX
-  })
+  }
 
   // при движении передаем позицию пальца и двигаем слайдер
-  slider.addEventListener('touchmove', (event) => {
+  const touchMove = (event) => {
     posEnd = event.touches[0].clientX
     slider.style.transform = `translateX(${sliderMove()}px`
-  })
+  }
 
   // когда убираем палец добавляем анимацию и ставим слайдер на заданное место
-  slider.addEventListener('touchend', (event) => {
+  const touchEnd = (event) => {
     slider.style.transition = '.5s ease-in-out'
     sliderPosition = position()
     slider.style.transform = `translateX(${sliderPosition}px)`
+  }
 
+  //добавляем слушателей
+  slider.addEventListener('touchstart', touchStart)
+  slider.addEventListener('touchmove', touchMove)
+  slider.addEventListener('touchend', touchEnd)
+
+  window.addEventListener('resize', () => {
+    // при ресайзе сбрасываем слайдер
+    if (window.innerWidth < 769) {
+      whoSlider.addEventListener('touchstart', touchStart)
+      whoSlider.addEventListener('touchmove', touchMove)
+      whoSlider.addEventListener('touchend', touchEnd)
+
+      preferencesSlider.addEventListener('touchstart', touchStart)
+      preferencesSlider.addEventListener('touchmove', touchMove)
+      preferencesSlider.addEventListener('touchend', touchEnd)
+
+    }
+    if (window.innerWidth > 769) {
+      whoSlider.style.transform = `translateX(0px)`
+      whoSlider.removeEventListener('touchstart', touchStart)
+      whoSlider.removeEventListener('touchmove', touchMove)
+      whoSlider.removeEventListener('touchend', touchEnd)
+
+      preferencesSlider.style.transform = `translateX(0px)`
+      preferencesSlider.removeEventListener('touchstart', touchStart)
+      preferencesSlider.removeEventListener('touchmove', touchMove)
+      preferencesSlider.removeEventListener('touchend', touchEnd)
+    }
   })
-
 }
+
+// модальное окно
+const modalBtns = document.querySelectorAll('.callback')
+const modalWindow = document.querySelector('.modal-window')
+const closeBtnModal = document.querySelector('.closeBtn__modal')
+
+for (const modalBtn of modalBtns) {
+  modalBtn.addEventListener('click', () => {
+    modalWindow.classList.add('active')
+    body.classList.add('scroll-hidden')
+  })
+}
+
+modalWindow.addEventListener('click', (event) => {
+  if (event.target == closeBtnModal || event.target == modalWindow) {
+    modalWindow.classList.remove('active')
+    body.classList.remove('scroll-hidden')
+    header.classList.remove('mobile')
+  }
+})
+
+
+
 
 
 
